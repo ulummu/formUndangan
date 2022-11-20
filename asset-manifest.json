@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/formUndangan/static/css/main.726d634d.css",
-    "main.js": "/formUndangan/static/js/main.52f4f431.js",
+    "main.js": "/formUndangan/static/js/main.8bde76bc.js",
     "static/media/bootstrap-icons.woff?": "/formUndangan/static/media/bootstrap-icons.4133309eaf232a933735.woff",
     "static/media/bootstrap-icons.woff2?": "/formUndangan/static/media/bootstrap-icons.cfde41d697b6dcd56fa6.woff2",
     "static/media/logo.png": "/formUndangan/static/media/logo.9b82798ec2ffe923f745.png",
     "index.html": "/formUndangan/index.html",
     "main.726d634d.css.map": "/formUndangan/static/css/main.726d634d.css.map",
-    "main.52f4f431.js.map": "/formUndangan/static/js/main.52f4f431.js.map"
+    "main.8bde76bc.js.map": "/formUndangan/static/js/main.8bde76bc.js.map"
   },
   "entrypoints": [
     "static/css/main.726d634d.css",
-    "static/js/main.52f4f431.js"
+    "static/js/main.8bde76bc.js"
   ]
 }
