@@ -153,7 +153,7 @@ export default function CardForm(props) {
           <Card className="m-auto mt-5 mb-5 align-self-center Card">
             <Card.Header as="h3" className="card-header">
               <img src={logo} alt="logo" className="logo me-2" />
-              Form Data Undangan
+              Form Data
             </Card.Header>
             <Card.Body>
               <Form
