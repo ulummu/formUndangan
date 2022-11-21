@@ -4,6 +4,12 @@
     overflow: hidden;
     width: 70%;
 }
+@media screen and (max-width: 850px){
+    .Card{
+        width: 100%;
+    }
+}
+
 .logo{
 width:unset;
 height:45px;
