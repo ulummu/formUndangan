@@ -168,18 +168,18 @@ export default function CardForm(props) {
                     <option value="" selected disabled hidden>
                       Silakan Pilih Tema
                     </option>
-                    <option value="Tema AE">AE</option>
-                    <option value="Tema AD">AD</option>
-                    <option value="Tema AA">AA</option>
-                    <option value="Tema P">P</option>
-                    <option value="Tema Q">Q</option>
-                    <option value="Tema W">W</option>
-                    <option value="Tema X">X</option>
-                    <option value="Tema Y">Y</option>
-                    <option value="Tema Z">Z</option>
-                    <option value="Tema Jawa">Jawa</option>
-                    <option value="Tema Minang">Minang</option>
-                    <option value="Tema Aqiqah">Aqiqah</option>
+                    <option value="Tema AE">Tema AE</option>
+                    <option value="Tema AD">Tema AD</option>
+                    <option value="Tema AA">Tema AA</option>
+                    <option value="Tema P">Tema P</option>
+                    <option value="Tema Q">Tema Q</option>
+                    <option value="Tema W">Tema W</option>
+                    <option value="Tema X">Tema X</option>
+                    <option value="Tema Y">Tema Y</option>
+                    <option value="Tema Z">Tema Z</option>
+                    <option value="Tema Jawa">Tema Jawa</option>
+                    <option value="Tema Minang">Tema Minang</option>
+                    <option value="Tema Aqiqah">Tema Aqiqah</option>
                   </Form.Select>
                   <Form.Control.Feedback type="invalid">
                     Tema Belum Dipilih
