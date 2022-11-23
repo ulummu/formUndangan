@@ -165,18 +165,18 @@ export default function CardForm(props) {
                     <option value="" selected disabled hidden>
                       Silakan Pilih Tema
                     </option>
-                    <option value="AE">AE</option>
-                    <option value="AD">AD</option>
-                    <option value="AA">AA</option>
-                    <option value="P">P</option>
-                    <option value="Q">Q</option>
-                    <option value="W">W</option>
-                    <option value="X">X</option>
-                    <option value="Y">Y</option>
-                    <option value="Z">Z</option>
-                    <option value="Jawa">Jawa</option>
-                    <option value="Minang">Minang</option>
-                    <option value="Aqiqah">Aqiqah</option>
+                    <option value="Tema AE">AE</option>
+                    <option value="Tema AD">AD</option>
+                    <option value="Tema AA">AA</option>
+                    <option value="Tema P">P</option>
+                    <option value="Tema Q">Q</option>
+                    <option value="Tema W">W</option>
+                    <option value="Tema X">X</option>
+                    <option value="Tema Y">Y</option>
+                    <option value="Tema Z">Z</option>
+                    <option value="Tema Jawa">Jawa</option>
+                    <option value="Tema Minang">Minang</option>
+                    <option value="Tema Aqiqah">Aqiqah</option>
                   </Form.Select>
                   <Form.Control.Feedback type="invalid">
                     Tema Belum Dipilih
@@ -256,8 +256,8 @@ export default function CardForm(props) {
                     <option value="" selected disabled hidden>
                       Pilih
                     </option>
-                    <option value="Pria">Pria</option>
                     <option value="Wanita">Wanita</option>
+                    <option value="Pria">Pria</option>
                   </Form.Select>
                   <Form.Control.Feedback type="invalid">
                     Nama Belum Dipilih
@@ -265,7 +265,7 @@ export default function CardForm(props) {
                 </Form.Group>
                 <Form.Group className="mb-2">
                   <Form.Label className="labelForm">
-                    Daftar Kehadiran
+                    Reservasi Kehadiran Lewat WA
                   </Form.Label>
                   <Form.Select
                     name="daftarHadir"
@@ -285,7 +285,7 @@ export default function CardForm(props) {
                   {visible && (
                     <FloatingLabel
                       controlId="floatingInput"
-                      label="Nomor Calon Pengantin untuk Notifikasi Kehadiran"
+                      label="Nomor Calon Pengantin "
                       className="linkFoto"
                     >
                       <Form.Control
@@ -450,6 +450,26 @@ export default function CardForm(props) {
                             </div>
                           </Accordion.Header>
                           <Accordion.Body>
+                            <Form.Group className="mb-2">
+                              <Form.Label className="labelForm">
+                                Acara
+                              </Form.Label>
+                              <Form.Select
+                                name="namaAwal"
+                                value={values.namaAwal}
+                                onChange={handleInputChange}
+                                required
+                              >
+                                <option value="" selected disabled hidden>
+                                  Silakan Pilih
+                                </option>
+                                <option value="Akad">Akad</option>
+                                <option value="Pemberkatan">Pemberkatan</option>
+                              </Form.Select>
+                              <Form.Control.Feedback type="invalid">
+                                Acara Belum Dipilih
+                              </Form.Control.Feedback>
+                            </Form.Group>
                             <FloatingLabel
                               controlId="floatingInput"
                               label="Hari, Tanggal Bulan Tahun"
