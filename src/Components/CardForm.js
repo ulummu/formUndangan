@@ -814,6 +814,26 @@ export default function CardForm(props) {
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
+                <Form.Group className="mb-2">
+                  <Form.Label className="labelForm">
+                    Daftar Kehadiran Lewat Barcode
+                  </Form.Label>
+                  <Form.Select
+                    name="rsvp"
+                    value={values.rsvp}
+                    onChange={handleInputChange}
+                    required
+                  >
+                    <option value="" selected disabled hidden>
+                      Pilih
+                    </option>
+                    <option value="Iya">Iya</option>
+                    <option value="Tidak">Tidak</option>
+                  </Form.Select>
+                  <Form.Control.Feedback type="invalid">
+                    RSVP Belum Dipilih
+                  </Form.Control.Feedback>
+                </Form.Group>
                 <Button type="submit" className="Button mt-4 mb-2">
                   <i className="bi bi-whatsapp me-2"></i>
                   Kirim
