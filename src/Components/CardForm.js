@@ -165,7 +165,7 @@ export default function CardForm(props) {
                     onChange={handleInputChange}
                     required
                   >
-                    <option value="" selected disabled hidden>
+                    <option value="" disabled hidden>
                       Silakan Pilih Tema
                     </option>
                     <option value="Tema AE">Tema AE</option>
@@ -194,7 +194,7 @@ export default function CardForm(props) {
                     onChange={handleInputChange}
                     required
                   >
-                    <option value="" selected disabled hidden>
+                    <option value="" disabled hidden>
                       Silakan Pilih Bahasa
                     </option>
                     <option value="Indonesia">Indonesia</option>
@@ -213,7 +213,7 @@ export default function CardForm(props) {
                     onChange={handleInputChange}
                     required
                   >
-                    <option value="" selected disabled hidden>
+                    <option value="" disabled hidden>
                       Silakan Pilih Paket
                     </option>
                     <option value="Gold">Gold</option>
@@ -234,7 +234,7 @@ export default function CardForm(props) {
                     onChange={handleInputChange}
                     required
                   >
-                    <option value="" selected disabled hidden>
+                    <option value="" disabled hidden>
                       Pilih
                     </option>
                     <option value="Iya">Iya</option>
@@ -256,7 +256,7 @@ export default function CardForm(props) {
                     onChange={handleInputChange}
                     required
                   >
-                    <option value="" selected disabled hidden>
+                    <option value="" disabled hidden>
                       Pilih
                     </option>
                     <option value="Wanita">Wanita</option>
@@ -265,45 +265,6 @@ export default function CardForm(props) {
                   <Form.Control.Feedback type="invalid">
                     Nama Belum Dipilih
                   </Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group className="mb-2">
-                  <Form.Label className="labelForm">
-                    Reservasi Kehadiran Lewat WA
-                  </Form.Label>
-                  <Form.Select
-                    name="daftarHadir"
-                    value={values.daftarHadir}
-                    onChange={handleInputChange}
-                    required
-                  >
-                    <option value="" selected disabled hidden>
-                      Pilih
-                    </option>
-                    <option value="Iya">Iya</option>
-                    <option value="Tidak">Tidak</option>
-                  </Form.Select>
-                  <Form.Control.Feedback type="invalid">
-                    Daftar Hadir Belum Dipilih
-                  </Form.Control.Feedback>
-                  {visible && (
-                    <FloatingLabel
-                      controlId="floatingInput"
-                      label="Nomor Calon Pengantin "
-                      className="linkFoto"
-                    >
-                      <Form.Control
-                        name="nomorCatin"
-                        value={values.nomorCatin}
-                        onChange={handleInputChange}
-                        required
-                        type="text"
-                        placeholder="Masukan Nomor"
-                      />
-                      <Form.Control.Feedback type="invalid">
-                        Nomor Belum Diisi
-                      </Form.Control.Feedback>
-                    </FloatingLabel>
-                  )}
                 </Form.Group>
 
                 <Accordion flush>
@@ -463,7 +424,7 @@ export default function CardForm(props) {
                                 onChange={handleInputChange}
                                 required
                               >
-                                <option value="" selected disabled hidden>
+                                <option value="" disabled hidden>
                                   Silakan Pilih
                                 </option>
                                 <option value="Akad">Akad</option>
@@ -483,7 +444,7 @@ export default function CardForm(props) {
                                   onChange={handleInputChange}
                                   type="text"
                                 >
-                                  <option value="" selected disabled hidden>
+                                  <option value="" disabled hidden>
                                     Hari
                                   </option>
                                   <option value="Senin">Senin</option>
@@ -549,7 +510,7 @@ export default function CardForm(props) {
                                   onChange={handleInputChange}
                                   type="text"
                                 >
-                                  <option value="" selected disabled hidden>
+                                  <option value="" disabled hidden>
                                     Zonasi
                                   </option>
                                   <option value="WIB">WIB</option>
@@ -599,23 +560,51 @@ export default function CardForm(props) {
                             <div className="labelForm">Resepsi</div>
                           </Accordion.Header>
                           <Accordion.Body>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Hari, Tanggal Bulan Tahun"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="resepsi"
-                                value={capitalize(values.resepsi)}
-                                onChange={handleInputChange}
-                                required
-                                type="text"
-                                placeholder="Masukan Hari, Tanggal Bulan Tahun"
-                              />
-                              <Form.Control.Feedback type="invalid">
-                                Tanggal Belum Diisi
-                              </Form.Control.Feedback>
-                            </FloatingLabel>
+                            <Row>
+                              <Col sm={3}>
+                                <Form.Select
+                                  required
+                                  className="hari"
+                                  name="hariResepsi"
+                                  value={values.hariAkad}
+                                  onChange={handleInputChange}
+                                  type="text"
+                                >
+                                  <option value="" disabled hidden>
+                                    Hari
+                                  </option>
+                                  <option value="Senin">Senin</option>
+                                  <option value="Selasa">Selasa</option>
+                                  <option value="Rabu">Rabu</option>
+                                  <option value="Kamis">Kamis</option>
+                                  <option value="Jumat">Jumat</option>
+                                  <option value="Sabtu">Sabtu</option>
+                                  <option value="Minggu">Minggu</option>
+                                </Form.Select>
+                                <Form.Control.Feedback type="invalid">
+                                  Hari Belum Dipilih
+                                </Form.Control.Feedback>
+                              </Col>
+                              <Col sm={9}>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Tanggal Bulan Tahun"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="resepsi"
+                                    value={capitalize(values.resepsi)}
+                                    onChange={handleInputChange}
+                                    required
+                                    type="text"
+                                    placeholder="Masukan Hari, Tanggal Bulan Tahun"
+                                  />
+                                  <Form.Control.Feedback type="invalid">
+                                    Tanggal Belum Diisi
+                                  </Form.Control.Feedback>
+                                </FloatingLabel>
+                              </Col>
+                            </Row>
                             <Row>
                               <Col>
                                 <FloatingLabel
@@ -648,7 +637,7 @@ export default function CardForm(props) {
                                   onChange={handleInputChange}
                                   type="text"
                                 >
-                                  <option value="" selected disabled hidden>
+                                  <option value="" disabled hidden>
                                     Zonasi
                                   </option>
                                   <option value="WIB">WIB</option>
@@ -819,15 +808,52 @@ export default function CardForm(props) {
                 </Accordion>
                 <Form.Group className="mb-2">
                   <Form.Label className="labelForm">
-                    Daftar Kehadiran Lewat Barcode
+                    Reservasi Kehadiran Lewat WA
                   </Form.Label>
+                  <Form.Select
+                    name="daftarHadir"
+                    value={values.daftarHadir}
+                    onChange={handleInputChange}
+                    required
+                  >
+                    <option value="" disabled hidden>
+                      Pilih
+                    </option>
+                    <option value="Iya">Iya</option>
+                    <option value="Tidak">Tidak</option>
+                  </Form.Select>
+                  <Form.Control.Feedback type="invalid">
+                    Daftar Hadir Belum Dipilih
+                  </Form.Control.Feedback>
+                  {visible && (
+                    <FloatingLabel
+                      controlId="floatingInput"
+                      label="Nomor Calon Pengantin "
+                      className="linkFoto"
+                    >
+                      <Form.Control
+                        name="nomorCatin"
+                        value={values.nomorCatin}
+                        onChange={handleInputChange}
+                        required
+                        type="text"
+                        placeholder="Masukan Nomor"
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        Nomor Belum Diisi
+                      </Form.Control.Feedback>
+                    </FloatingLabel>
+                  )}
+                </Form.Group>
+                <Form.Group className="mb-2">
+                  <Form.Label className="labelForm">QR Code RSVP</Form.Label>
                   <Form.Select
                     name="rsvp"
                     value={values.rsvp}
                     onChange={handleInputChange}
                     required
                   >
-                    <option value="" selected disabled hidden>
+                    <option value="" disabled hidden>
                       Pilih
                     </option>
                     <option value="Iya">Iya</option>
