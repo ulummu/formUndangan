@@ -127,14 +127,6 @@ export default function CardForm(props) {
   };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    if (e.target.name === "foto" && e.target.value === "Iya") {
-      setVisible(!visible);
-    } else if (
-      (e.target.name === "foto" && e.target.value === "Tidak") ||
-      e.target.value === "Animasi"
-    ) {
-      setVisible(false);
-    }
     if (e.target.name === "daftarHadir" && e.target.value === "Iya") {
       setVisible(!visible);
     } else if (e.target.name === "daftarHadir" && e.target.value === "Tidak") {
@@ -170,7 +162,9 @@ export default function CardForm(props) {
                     onChange={handleInputChange}
                     required
                   >
-                    <option value="">Silakan Pilih Tema</option>
+                    <option value="" selected disabled hidden>
+                      Silakan Pilih Tema
+                    </option>
                     <option value="AE">AE</option>
                     <option value="AD">AD</option>
                     <option value="AA">AA</option>
@@ -197,7 +191,9 @@ export default function CardForm(props) {
                     onChange={handleInputChange}
                     required
                   >
-                    <option value="">Silakan Pilih Bahasa</option>
+                    <option value="" selected disabled hidden>
+                      Silakan Pilih Bahasa
+                    </option>
                     <option value="Indonesia">Indonesia</option>
                     <option value="Inggris">Inggris</option>
                   </Form.Select>
@@ -214,7 +210,9 @@ export default function CardForm(props) {
                     onChange={handleInputChange}
                     required
                   >
-                    <option value="">Silakan Pilih Paket</option>
+                    <option value="" selected disabled hidden>
+                      Silakan Pilih Paket
+                    </option>
                     <option value="Gold">Gold</option>
                     <option value="Silver">Silver</option>
                   </Form.Select>
@@ -233,7 +231,9 @@ export default function CardForm(props) {
                     onChange={handleInputChange}
                     required
                   >
-                    <option value="">Pilih</option>
+                    <option value="" selected disabled hidden>
+                      Pilih
+                    </option>
                     <option value="Iya">Iya</option>
                     <option value="Tidak">Tidak</option>
                     <option value="Animasi">Animasi</option>
@@ -241,25 +241,6 @@ export default function CardForm(props) {
                   <Form.Control.Feedback type="invalid">
                     Foto Belum Dipilih
                   </Form.Control.Feedback>
-                  {visible && (
-                    <FloatingLabel
-                      controlId="floatingInput"
-                      label="Link Foto"
-                      className="linkFoto"
-                    >
-                      <Form.Control
-                        name="linkFoto"
-                        value={values.linkFoto}
-                        onChange={handleInputChange}
-                        required
-                        type="text"
-                        placeholder="Masukan Link"
-                      />
-                      <Form.Control.Feedback type="invalid">
-                        Link Foto Belum Diisi
-                      </Form.Control.Feedback>
-                    </FloatingLabel>
-                  )}
                 </Form.Group>
 
                 <Form.Group className="mb-2">
@@ -272,7 +253,9 @@ export default function CardForm(props) {
                     onChange={handleInputChange}
                     required
                   >
-                    <option value="">Pilih</option>
+                    <option value="" selected disabled hidden>
+                      Pilih
+                    </option>
                     <option value="Pria">Pria</option>
                     <option value="Wanita">Wanita</option>
                   </Form.Select>
@@ -290,7 +273,9 @@ export default function CardForm(props) {
                     onChange={handleInputChange}
                     required
                   >
-                    <option value="">Pilih</option>
+                    <option value="" selected disabled hidden>
+                      Pilih
+                    </option>
                     <option value="Iya">Iya</option>
                     <option value="Tidak">Tidak</option>
                   </Form.Select>
@@ -513,11 +498,12 @@ export default function CardForm(props) {
                                   onChange={handleInputChange}
                                   type="text"
                                 >
-                                  <option value="">Zonasi</option>
+                                  <option value="" selected disabled hidden>
+                                    Zonasi
+                                  </option>
                                   <option value="WIB">WIB</option>
                                   <option value="WITA">WITA</option>
                                   <option value="WIT">WIT</option>
-                                  <option value="3">WIKA</option>
                                 </Form.Select>
                               </Col>
                             </Row>
@@ -611,11 +597,12 @@ export default function CardForm(props) {
                                   onChange={handleInputChange}
                                   type="text"
                                 >
-                                  <option value="">Zonasi</option>
+                                  <option value="" selected disabled hidden>
+                                    Zonasi
+                                  </option>
                                   <option value="WIB">WIB</option>
                                   <option value="WITA">WITA</option>
                                   <option value="WIT">WIT</option>
-                                  <option value="3">WIKA</option>
                                 </Form.Select>
                               </Col>
                             </Row>
@@ -734,7 +721,7 @@ export default function CardForm(props) {
                 <Accordion flush>
                   <Accordion.Item eventKey="0">
                     <Accordion.Header>
-                      <i className="bi bi-envelope me-2"></i>Bisaroh Digital
+                      <i className="bi bi-envelope me-2"></i>Angpao Digital
                     </Accordion.Header>
                     <Accordion.Body>
                       <FloatingLabel
