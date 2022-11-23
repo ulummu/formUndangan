@@ -450,7 +450,7 @@ export default function CardForm(props) {
                             </div>
                           </Accordion.Header>
                           <Accordion.Body>
-                            <Form.Group className="mb-2">
+                            <Form.Group className="mb-3">
                               <Form.Label className="labelForm">
                                 Acara
                               </Form.Label>
@@ -470,23 +470,51 @@ export default function CardForm(props) {
                                 Acara Belum Dipilih
                               </Form.Control.Feedback>
                             </Form.Group>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Hari, Tanggal Bulan Tahun"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="akad"
-                                value={capitalize(values.akad)}
-                                onChange={handleInputChange}
-                                required
-                                type="text"
-                                placeholder="Masukan Hari, Tanggal Bulan Tahun"
-                              />
-                              <Form.Control.Feedback type="invalid">
-                                Tanggal Belum Diisi
-                              </Form.Control.Feedback>
-                            </FloatingLabel>
+                            <Row>
+                              <Col sm={3}>
+                                <Form.Select
+                                  required
+                                  className="hari"
+                                  name="hari"
+                                  value={values.hari}
+                                  onChange={handleInputChange}
+                                  type="text"
+                                >
+                                  <option value="" selected disabled hidden>
+                                    Hari
+                                  </option>
+                                  <option value="Senin">Senin</option>
+                                  <option value="Selasa">Selasa</option>
+                                  <option value="Rabu">Rabu</option>
+                                  <option value="Kamis">Kamis</option>
+                                  <option value="Jumat">Jumat</option>
+                                  <option value="Sabtu">Sabtu</option>
+                                  <option value="Minggu">Minggu</option>
+                                </Form.Select>
+                                <Form.Control.Feedback type="invalid">
+                                  Hari Belum Dipilih
+                                </Form.Control.Feedback>
+                              </Col>
+                              <Col sm={9}>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Tanggal Bulan Tahun"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="akad"
+                                    value={capitalize(values.akad)}
+                                    onChange={handleInputChange}
+                                    required
+                                    type="text"
+                                    placeholder="Masukan Hari, Tanggal Bulan Tahun"
+                                  />
+                                  <Form.Control.Feedback type="invalid">
+                                    Tanggal Belum Diisi
+                                  </Form.Control.Feedback>
+                                </FloatingLabel>
+                              </Col>
+                            </Row>
                             <Row>
                               <Col>
                                 <FloatingLabel
