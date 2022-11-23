@@ -27,6 +27,7 @@ const initialValues = {
   lengkapPria: "",
   orangTuaPria: "",
   akad: "",
+  hariAkad: "",
   pukulAkad: "",
   zonaWaktuAkad: "",
   tempatAkad: "",
@@ -88,6 +89,8 @@ export default function CardForm(props) {
         "%0aNama Kedua Orang Tua : Putra dari " +
         values.orangTuaPria +
         "%0a%0aRincian Acara %0a-Akad Nikah, Pemberkatan, dll %0aHari, Tanggal Bulan Tahun : " +
+        values.hariAkad +
+        ", " +
         values.akad +
         "%0aPukul : " +
         values.pukulAkad +
@@ -475,8 +478,8 @@ export default function CardForm(props) {
                                 <Form.Select
                                   required
                                   className="hari"
-                                  name="hari"
-                                  value={values.hari}
+                                  name="hariAkad"
+                                  value={values.hariAkad}
                                   onChange={handleInputChange}
                                   type="text"
                                 >
