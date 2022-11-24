@@ -27,6 +27,7 @@ const initialValues = {
   lengkapPria: "",
   orangTuaPria: "",
   akad: "",
+  namaAcaraAkad: "",
   hariAkad: "",
   pukulAkad: "",
   zonaWaktuAkad: "",
@@ -91,7 +92,9 @@ export default function CardForm(props) {
         values.lengkapPria +
         "%0aNama Kedua Orang Tua : Putra dari " +
         values.orangTuaPria +
-        "%0a%0aRincian Acara %0a-Akad Nikah, Pemberkatan, dll %0aHari, Tanggal Bulan Tahun : " +
+        "%0a%0aRincian Acara %0a-Akad Nikah, Pemberkatan, dll %0a%0aAcara : " +
+        values.namaAcaraAkad +
+        "%0aHari, Tanggal Bulan Tahun : " +
         values.hariAkad +
         ", " +
         values.akad +
@@ -140,6 +143,14 @@ export default function CardForm(props) {
     } else if (e.target.name === "daftarHadir" && e.target.value === "Tidak") {
       setVisible(false);
     }
+    if (e.target.name === "namaAcaraAkad" && e.target.value === "Iya") {
+      setVisible(!visible);
+    } else if (
+      e.target.name === "namaAcaraAkad" &&
+      e.target.value === "Tidak"
+    ) {
+      setVisible(false);
+    }
     setValues({
       ...values,
       [name]: value,
@@ -173,8 +184,10 @@ export default function CardForm(props) {
                     <option value="" disabled hidden>
                       Silakan Pilih Tema
                     </option>
+                    <option value="Tema 01">Tema 01</option>
                     <option value="Tema AE">Tema AE</option>
                     <option value="Tema AD">Tema AD</option>
+                    <option value="Tema AC">Tema AC</option>
                     <option value="Tema AA">Tema AA</option>
                     <option value="Tema P">Tema P</option>
                     <option value="Tema Q">Tema Q</option>
@@ -223,6 +236,7 @@ export default function CardForm(props) {
                     </option>
                     <option value="Gold">Gold</option>
                     <option value="Silver">Silver</option>
+                    <option value="Bronze">Bronze</option>
                   </Form.Select>
                   <Form.Control.Feedback type="invalid">
                     Paket Belum Dipilih
@@ -242,8 +256,8 @@ export default function CardForm(props) {
                     <option value="" disabled hidden>
                       Pilih
                     </option>
-                    <option value="Iya">Iya</option>
-                    <option value="Tidak">Tidak</option>
+                    <option value="Dengan Foto">Dengan Foto</option>
+                    <option value="Tanpa Foto">Tanpa Foto</option>
                     <option value="Animasi">Animasi</option>
                   </Form.Select>
                   <Form.Control.Feedback type="invalid">
@@ -424,8 +438,8 @@ export default function CardForm(props) {
                                 Acara
                               </Form.Label>
                               <Form.Select
-                                name="namaAwal"
-                                value={values.namaAwal}
+                                name="namaAcaraAkad"
+                                value={values.namaAcaraAkad}
                                 onChange={handleInputChange}
                                 required
                               >
@@ -434,6 +448,26 @@ export default function CardForm(props) {
                                 </option>
                                 <option value="Akad">Akad</option>
                                 <option value="Pemberkatan">Pemberkatan</option>
+                                <option value="Lainnya">Lainnya</option>
+                                {visible && (
+                                  <FloatingLabel
+                                    controlId="floatingInput"
+                                    label="Nama Acara "
+                                    className="linkFoto"
+                                  >
+                                    <Form.Control
+                                      name="lainnyaAkad"
+                                      value={values.lainnyaAkad}
+                                      onChange={handleInputChange}
+                                      required
+                                      type="text"
+                                      placeholder="Masukan Nama Acara"
+                                    />
+                                    <Form.Control.Feedback type="invalid">
+                                      Nomor Belum Diisi
+                                    </Form.Control.Feedback>
+                                  </FloatingLabel>
+                                )}
                               </Form.Select>
                               <Form.Control.Feedback type="invalid">
                                 Acara Belum Dipilih
