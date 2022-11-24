@@ -54,6 +54,7 @@ export default function CardForm(props) {
   const [validated, setValidated] = useState(false);
   const [values, setValues] = useState(initialValues);
   const [visible, setVisible] = useState(false);
+  const [visibleAkad, setVisibleAkad] = useState(false);
   const capitalize = (s) =>
     s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
 
@@ -143,13 +144,13 @@ export default function CardForm(props) {
     } else if (e.target.name === "daftarHadir" && e.target.value === "Tidak") {
       setVisible(false);
     }
-    if (e.target.name === "namaAcaraAkad" && e.target.value === "Iya") {
-      setVisible(!visible);
+    if (e.target.name === "namaAcaraAkad" && e.target.value === "Lainnya") {
+      setVisibleAkad(!visibleAkad);
     } else if (
       e.target.name === "namaAcaraAkad" &&
-      e.target.value === "Tidak"
+      (e.target.value === "Akad" || e.target.value === "Pemberkatan")
     ) {
-      setVisible(false);
+      setVisibleAkad(false);
     }
     setValues({
       ...values,
@@ -449,26 +450,26 @@ export default function CardForm(props) {
                                 <option value="Akad">Akad</option>
                                 <option value="Pemberkatan">Pemberkatan</option>
                                 <option value="Lainnya">Lainnya</option>
-                                {visible && (
-                                  <FloatingLabel
-                                    controlId="floatingInput"
-                                    label="Nama Acara "
-                                    className="linkFoto"
-                                  >
-                                    <Form.Control
-                                      name="lainnyaAkad"
-                                      value={values.lainnyaAkad}
-                                      onChange={handleInputChange}
-                                      required
-                                      type="text"
-                                      placeholder="Masukan Nama Acara"
-                                    />
-                                    <Form.Control.Feedback type="invalid">
-                                      Nomor Belum Diisi
-                                    </Form.Control.Feedback>
-                                  </FloatingLabel>
-                                )}
                               </Form.Select>
+                              {visibleAkad && (
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Nama Acara "
+                                  className="linkFoto"
+                                >
+                                  <Form.Control
+                                    name="lainnyaAkad"
+                                    value={values.lainnyaAkad}
+                                    onChange={handleInputChange}
+                                    required
+                                    type="text"
+                                    placeholder="Masukan Nama Acara"
+                                  />
+                                  <Form.Control.Feedback type="invalid">
+                                    Nama Acara Belum Diisi
+                                  </Form.Control.Feedback>
+                                </FloatingLabel>
+                              )}
                               <Form.Control.Feedback type="invalid">
                                 Acara Belum Dipilih
                               </Form.Control.Feedback>
