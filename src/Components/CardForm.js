@@ -32,13 +32,11 @@ const initialValues = {
   pukulAkad: "",
   zonaWaktuAkad: "",
   tempatAkad: "",
-  mapsAkad: "",
   hariResepsi: "",
   resepsi: "",
   pukulResepsi: "",
   zonaWaktuResepsi: "",
   tempatResepsi: "",
-  mapsResepsi: "",
   musik: "",
   loveStory: "",
   live: "",
@@ -49,12 +47,14 @@ const initialValues = {
   nomorCatin: "",
   alamat: "",
   namaPenerima: "",
+  waKonfirmasi: "",
 };
 export default function CardForm(props) {
   const [validated, setValidated] = useState(false);
   const [values, setValues] = useState(initialValues);
   const [visible, setVisible] = useState(false);
   const [visibleAkad, setVisibleAkad] = useState(false);
+  const [visibleResepsi, setVisibleResepsi] = useState(false);
   const capitalize = (s) =>
     s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
 
@@ -121,7 +121,7 @@ export default function CardForm(props) {
         values.loveStory +
         "%0aLive Streaming : " +
         values.live +
-        "%0a%0aWedding Gift %0a%0aAngpao Digital%0aNomor Rekening : " +
+        "%0a%0aWedding Gift %0a%0aAmplop Digital%0aNomor Rekening : " +
         values.nomorRek +
         "%0aNama Bank : " +
         values.namaBank +
@@ -130,7 +130,9 @@ export default function CardForm(props) {
         "%0a%0aKirim Hadiah%0aAlamat : " +
         values.alamat +
         "%0aNama Penerima : " +
-        values.namaPenerima;
+        values.namaPenerima +
+        "%0aWA Konfirmasi Amplop/Penerima : " +
+        values.waKonfirmasi;
     }
     console.log(values);
     event.preventDefault();
@@ -151,6 +153,14 @@ export default function CardForm(props) {
       (e.target.value === "Akad" || e.target.value === "Pemberkatan")
     ) {
       setVisibleAkad(false);
+    }
+    if (e.target.name === "namaAcaraResepsi" && e.target.value === "Lainnya") {
+      setVisibleResepsi(!visibleResepsi);
+    } else if (
+      e.target.name === "namaAcaraResepsi" &&
+      (e.target.value === "Resepsi" || e.target.value === "Walimatul Ursy")
+    ) {
+      setVisibleResepsi(false);
     }
     setValues({
       ...values,
@@ -583,6 +593,48 @@ export default function CardForm(props) {
                             <div className="labelForm">Resepsi</div>
                           </Accordion.Header>
                           <Accordion.Body>
+                            <Form.Group className="mb-3">
+                              <Form.Label className="labelForm">
+                                Acara
+                              </Form.Label>
+                              <Form.Select
+                                name="namaAcaraResepsi"
+                                value={values.namaAcaraResepsi}
+                                onChange={handleInputChange}
+                                required
+                              >
+                                <option value="" disabled hidden>
+                                  Silakan Pilih
+                                </option>
+                                <option value="Resepsi">Resepsi</option>
+                                <option value="Walimatul Ursy">
+                                  Walimatul Ursy
+                                </option>
+                                <option value="Lainnya">Lainnya</option>
+                              </Form.Select>
+                              {visibleResepsi && (
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Nama Acara "
+                                  className="linkFoto"
+                                >
+                                  <Form.Control
+                                    name="lainnyaResepsi"
+                                    value={values.lainnyaResepsi}
+                                    onChange={handleInputChange}
+                                    required
+                                    type="text"
+                                    placeholder="Masukan Nama Acara"
+                                  />
+                                  <Form.Control.Feedback type="invalid">
+                                    Nama Acara Belum Diisi
+                                  </Form.Control.Feedback>
+                                </FloatingLabel>
+                              )}
+                              <Form.Control.Feedback type="invalid">
+                                Acara Belum Dipilih
+                              </Form.Control.Feedback>
+                            </Form.Group>
                             <Row>
                               <Col sm={3}>
                                 <Form.Select
@@ -774,7 +826,7 @@ export default function CardForm(props) {
                       <Accordion flush>
                         <Accordion.Item eventKey="0">
                           <Accordion.Header>
-                            <i className="bi bi-envelope me-2"></i>Angpao
+                            <i className="bi bi-envelope me-2"></i>Amplop
                             Digital
                           </Accordion.Header>
                           <Accordion.Body>
@@ -855,6 +907,23 @@ export default function CardForm(props) {
                           </Accordion.Body>
                         </Accordion.Item>
                       </Accordion>
+                      <FloatingLabel
+                        controlId="floatingInput"
+                        label="Nomor WA Konfirmasi "
+                        className="mt-3"
+                      >
+                        <Form.Control
+                          name="waKonfirmasi"
+                          value={values.waKonfirmasi}
+                          onChange={handleInputChange}
+                          required
+                          type="text"
+                          placeholder="Masukan Nomor"
+                        />
+                        <Form.Control.Feedback type="invalid">
+                          Nomor Belum Diisi
+                        </Form.Control.Feedback>
+                      </FloatingLabel>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
