@@ -32,6 +32,7 @@ const initialValues = {
   zonaWaktuAkad: "",
   tempatAkad: "",
   mapsAkad: "",
+  hariResepsi: "",
   resepsi: "",
   pukulResepsi: "",
   zonaWaktuResepsi: "",
@@ -45,6 +46,8 @@ const initialValues = {
   atasNama: "",
   daftarHadir: "",
   nomorCatin: "",
+  alamat: "",
+  namaPenerima: "",
 };
 export default function CardForm(props) {
   const [validated, setValidated] = useState(false);
@@ -98,9 +101,9 @@ export default function CardForm(props) {
         values.zonaWaktuAkad +
         "%0aTempat acara : " +
         values.tempatAkad +
-        "%0aMaps : " +
-        values.mapsAkad +
         "%0a%0aResepsi %0aHari, Tanggal Bulan Tahun : " +
+        values.hariResepsi +
+        ", " +
         values.resepsi +
         "%0aPukul : " +
         values.pukulResepsi +
@@ -108,20 +111,22 @@ export default function CardForm(props) {
         values.zonaWaktuResepsi +
         "%0aTempat acara : " +
         values.tempatResepsi +
-        "%0aMaps : " +
-        values.mapsResepsi +
         "%0a%0aMusik : " +
         values.musik +
         "%0aLove Story : " +
         values.loveStory +
         "%0aLive Streaming : " +
         values.live +
-        "%0a%0aAngpao Digital %0a%0aNomor Rekening : " +
+        "%0a%0aWedding Gift %0a%0aAngpao Digital%0aNomor Rekening : " +
         values.nomorRek +
-        "%0aLive Nama Bank : " +
+        "%0aNama Bank : " +
         values.namaBank +
-        "%0aLive Atas Nama : " +
-        values.atasNama;
+        "%0aAtas Nama : " +
+        values.atasNama +
+        "%0a%0aKirim Hadiah%0aAlamat : " +
+        values.alamat +
+        "%0aNama Penerima : " +
+        values.namaPenerima;
     }
     console.log(values);
     event.preventDefault();
@@ -536,23 +541,6 @@ export default function CardForm(props) {
                                 Tempat Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Maps"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="mapsAkad"
-                                value={values.mapsAkad}
-                                onChange={handleInputChange}
-                                required
-                                type="text"
-                                placeholder="Masukan Maps"
-                              />
-                              <Form.Control.Feedback type="invalid">
-                                Maps Belum Diisi
-                              </Form.Control.Feedback>
-                            </FloatingLabel>
                           </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">
@@ -566,7 +554,7 @@ export default function CardForm(props) {
                                   required
                                   className="hari"
                                   name="hariResepsi"
-                                  value={values.hariAkad}
+                                  value={values.hariResepsi}
                                   onChange={handleInputChange}
                                   type="text"
                                 >
@@ -663,23 +651,6 @@ export default function CardForm(props) {
                                 Tempat Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Maps"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="mapsResepsi"
-                                value={values.mapsResepsi}
-                                onChange={handleInputChange}
-                                required
-                                type="text"
-                                placeholder="Masukan Maps"
-                              />
-                              <Form.Control.Feedback type="invalid">
-                                Maps Belum Diisi
-                              </Form.Control.Feedback>
-                            </FloatingLabel>
                           </Accordion.Body>
                         </Accordion.Item>
                       </Accordion>
@@ -761,48 +732,94 @@ export default function CardForm(props) {
                 <Accordion flush>
                   <Accordion.Item eventKey="0">
                     <Accordion.Header>
-                      <i className="bi bi-envelope me-2"></i>Angpao Digital
+                      <i className="bi bi bi-box2 me-2"></i>
+                      <div className="labelForm">Wedding Gift</div>
                     </Accordion.Header>
                     <Accordion.Body>
-                      <FloatingLabel
-                        controlId="floatingInput"
-                        label="Nomor Rekening"
-                        className="mb-3"
-                      >
-                        <Form.Control
-                          name="nomorRek"
-                          value={values.nomorRek}
-                          onChange={handleInputChange}
-                          type="text"
-                          placeholder="Nomor Rekening"
-                        />
-                      </FloatingLabel>
-                      <FloatingLabel
-                        controlId="floatingInput"
-                        label="Nama Bank"
-                        className="mb-3"
-                      >
-                        <Form.Control
-                          name="namaBank"
-                          value={values.namaBank}
-                          onChange={handleInputChange}
-                          type="text"
-                          placeholder="Nama Bank"
-                        />
-                      </FloatingLabel>
-                      <FloatingLabel
-                        controlId="floatingInput"
-                        label="Atas Nama"
-                        className="mb-3"
-                      >
-                        <Form.Control
-                          name="atasNama"
-                          value={values.atasNama}
-                          onChange={handleInputChange}
-                          type="text"
-                          placeholder="Atas Nama Bank"
-                        />
-                      </FloatingLabel>
+                      <Accordion flush>
+                        <Accordion.Item eventKey="0">
+                          <Accordion.Header>
+                            <i className="bi bi-envelope me-2"></i>Angpao
+                            Digital
+                          </Accordion.Header>
+                          <Accordion.Body>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Nomor Rekening"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="nomorRek"
+                                value={values.nomorRek}
+                                onChange={handleInputChange}
+                                type="text"
+                                placeholder="Nomor Rekening"
+                              />
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Nama Bank"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="namaBank"
+                                value={values.namaBank}
+                                onChange={handleInputChange}
+                                type="text"
+                                placeholder="Nama Bank"
+                              />
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Atas Nama"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="atasNama"
+                                value={values.atasNama}
+                                onChange={handleInputChange}
+                                type="text"
+                                placeholder="Atas Nama Bank"
+                              />
+                            </FloatingLabel>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                      </Accordion>
+                      <Accordion flush>
+                        <Accordion.Item eventKey="0">
+                          <Accordion.Header>
+                            <i className="bi bi-gift me-2"></i>Kirim Hadiah
+                          </Accordion.Header>
+                          <Accordion.Body>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Alamat"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="alamat"
+                                value={values.alamat}
+                                onChange={handleInputChange}
+                                type="text"
+                                placeholder="Alamat"
+                              />
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Nama Penerima"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="namaPenerima"
+                                value={values.namaPenerima}
+                                onChange={handleInputChange}
+                                type="text"
+                                placeholder="Nama Penerima"
+                              />
+                            </FloatingLabel>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                      </Accordion>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
