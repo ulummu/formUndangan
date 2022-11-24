@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/formUndangan/static/css/main.aa701a69.css",
-    "main.js": "/formUndangan/static/js/main.960d8814.js",
+    "main.css": "/formUndangan/static/css/main.fab6f5d2.css",
+    "main.js": "/formUndangan/static/js/main.3e8a37e8.js",
     "static/media/bootstrap-icons.woff?": "/formUndangan/static/media/bootstrap-icons.4133309eaf232a933735.woff",
     "static/media/bootstrap-icons.woff2?": "/formUndangan/static/media/bootstrap-icons.cfde41d697b6dcd56fa6.woff2",
     "static/media/logo.png": "/formUndangan/static/media/logo.9b82798ec2ffe923f745.png",
     "index.html": "/formUndangan/index.html",
-    "main.aa701a69.css.map": "/formUndangan/static/css/main.aa701a69.css.map",
-    "main.960d8814.js.map": "/formUndangan/static/js/main.960d8814.js.map"
+    "main.fab6f5d2.css.map": "/formUndangan/static/css/main.fab6f5d2.css.map",
+    "main.3e8a37e8.js.map": "/formUndangan/static/js/main.3e8a37e8.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa701a69.css",
-    "static/js/main.960d8814.js"
+    "static/css/main.fab6f5d2.css",
+    "static/js/main.3e8a37e8.js"
   ]
 }
