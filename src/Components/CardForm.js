@@ -32,6 +32,7 @@ const initialValues = {
   pukulAkad: "",
   zonaWaktuAkad: "",
   tempatAkad: "",
+  namaAcaraResepsi: "",
   hariResepsi: "",
   resepsi: "",
   pukulResepsi: "",
@@ -105,7 +106,9 @@ export default function CardForm(props) {
         values.zonaWaktuAkad +
         "%0aTempat acara : " +
         values.tempatAkad +
-        "%0a%0aResepsi %0aHari, Tanggal Bulan Tahun : " +
+        "%0a%0aResepsi %0a%0aAcara : " +
+        values.namaAcaraResepsi +
+        "%0aHari, Tanggal Bulan Tahun : " +
         values.hariResepsi +
         ", " +
         values.resepsi +
