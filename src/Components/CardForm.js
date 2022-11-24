@@ -28,6 +28,7 @@ const initialValues = {
   orangTuaPria: "",
   akad: "",
   namaAcaraAkad: "",
+  lainnyaAkad: "",
   hariAkad: "",
   pukulAkad: "",
   zonaWaktuAkad: "",
@@ -35,6 +36,7 @@ const initialValues = {
   namaAcaraResepsi: "",
   hariResepsi: "",
   resepsi: "",
+  lainnyaResepsi: "",
   pukulResepsi: "",
   zonaWaktuResepsi: "",
   tempatResepsi: "",
@@ -48,6 +50,7 @@ const initialValues = {
   nomorCatin: "",
   alamat: "",
   namaPenerima: "",
+  rsvp: "",
   waKonfirmasi: "",
 };
 export default function CardForm(props) {
@@ -58,7 +61,8 @@ export default function CardForm(props) {
   const [visibleResepsi, setVisibleResepsi] = useState(false);
   const capitalize = (s) =>
     s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
-
+  const [data, setData] = useState("");
+  const [dataResepsi, setDataResepsi] = useState("");
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === true) {
@@ -94,8 +98,8 @@ export default function CardForm(props) {
         values.lengkapPria +
         "%0aNama Kedua Orang Tua : Putra dari " +
         values.orangTuaPria +
-        "%0a%0aRincian Acara %0a-Akad Nikah, Pemberkatan, dll %0a%0aAcara : " +
-        values.namaAcaraAkad +
+        "%0a%0aRincian Acara %0a-Akad Nikah, Pemberkatan, dll %0a" +
+        data +
         "%0aHari, Tanggal Bulan Tahun : " +
         values.hariAkad +
         ", " +
@@ -106,8 +110,8 @@ export default function CardForm(props) {
         values.zonaWaktuAkad +
         "%0aTempat acara : " +
         values.tempatAkad +
-        "%0a%0aResepsi %0a%0aAcara : " +
-        values.namaAcaraResepsi +
+        "%0a%0aResepsi %0a" +
+        dataResepsi +
         "%0aHari, Tanggal Bulan Tahun : " +
         values.hariResepsi +
         ", " +
@@ -135,14 +139,17 @@ export default function CardForm(props) {
         "%0aNama Penerima : " +
         values.namaPenerima +
         "%0aWA Konfirmasi Amplop/Penerima : " +
-        values.waKonfirmasi;
+        values.waKonfirmasi +
+        "%0aQR Code RSVP : " +
+        values.rsvp;
     }
-    console.log(values);
+    // console.log(data);
     event.preventDefault();
     event.stopPropagation();
     setValidated(true);
   };
   const handleInputChange = (e) => {
+    // setData("%0aAcara : " + values.namaAcaraAkad);
     const { name, value } = e.target;
     if (e.target.name === "daftarHadir" && e.target.value === "Iya") {
       setVisible(!visible);
@@ -164,6 +171,16 @@ export default function CardForm(props) {
       (e.target.value === "Resepsi" || e.target.value === "Walimatul Ursy")
     ) {
       setVisibleResepsi(false);
+    }
+    if (!!values.lainnyaAkad) {
+      setData("%0aAcara : " + values.lainnyaAkad);
+    } else {
+      setData("%0aAcara : " + values.namaAcaraAkad);
+    }
+    if (!!values.lainnyaResepsi) {
+      setDataResepsi("%0aAcara : " + values.lainnyaResepsi);
+    } else {
+      setDataResepsi("%0aAcara : " + values.namaAcaraResepsi);
     }
     setValues({
       ...values,
