@@ -612,7 +612,7 @@ export default function CardForm(props) {
                                     placeholder="pukul"
                                   />
                                   <Form.Text muted>
-                                    Format : ... s/d ...
+                                    Format : .. s/d ..
                                   </Form.Text>
                                   <Form.Control.Feedback type="invalid">
                                     waktu Belum Diisi
@@ -781,7 +781,7 @@ export default function CardForm(props) {
                                     placeholder="pukul"
                                   />
                                   <Form.Text muted>
-                                    Format : ... s/d ...
+                                    Format : .. s/d ..
                                   </Form.Text>
                                   <Form.Control.Feedback type="invalid">
                                     waktu Belum Diisi
@@ -856,7 +856,7 @@ export default function CardForm(props) {
                     <Accordion.Body>
                       <Form.Group className="mb-2">
                         <Form.Label className="labelForm">
-                          Musik Pengiring
+                          Backsound Undangan
                         </Form.Label>
                         <Form.Control
                           required
