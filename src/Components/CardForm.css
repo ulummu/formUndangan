@@ -8,6 +8,12 @@
     .Card{
         width: 100%;
     }
+    .formTanggal{
+        margin-top: 10px;
+    }
+    .formTambah{
+        margin-top: 10px;
+    }
 }
 
 .logo{

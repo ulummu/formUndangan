@@ -22,9 +22,11 @@ const initialValues = {
   namaAwal: "",
   panggilanWanita: "",
   lengkapWanita: "",
+  wanitaAnakKe: "",
   orangTuaWanita: "",
   panggilanPria: "",
   lengkapPria: "",
+  priaAnakKe: "",
   orangTuaPria: "",
   akad: "",
   namaAcaraAkad: "",
@@ -33,6 +35,7 @@ const initialValues = {
   pukulAkad: "",
   zonaWaktuAkad: "",
   tempatAkad: "",
+  mapsAkad: "",
   namaAcaraResepsi: "",
   hariResepsi: "",
   resepsi: "",
@@ -40,6 +43,7 @@ const initialValues = {
   pukulResepsi: "",
   zonaWaktuResepsi: "",
   tempatResepsi: "",
+  mapsResepsi: "",
   musik: "",
   loveStory: "",
   live: "",
@@ -90,13 +94,17 @@ export default function CardForm(props) {
         values.panggilanWanita +
         "%0aNama Lengkap : " +
         values.lengkapWanita +
-        "%0aNama Kedua Orang Tua : Putri dari " +
+        "%0aNama Kedua Orang Tua : Putri Ke " +
+        values.wanitaAnakKe +
+        "dari " +
         values.orangTuaWanita +
         "%0a%0aMempelai Pria %0aNama Panggilan : " +
         values.panggilanPria +
         "%0aNama Lengkap : " +
         values.lengkapPria +
-        "%0aNama Kedua Orang Tua : Putra dari " +
+        "%0aNama Kedua Orang Tua : Putra Ke " +
+        values.priaAnakKe +
+        "dari " +
         values.orangTuaPria +
         "%0a%0aRincian Acara %0a-Akad Nikah, Pemberkatan, dll %0a" +
         data +
@@ -110,6 +118,8 @@ export default function CardForm(props) {
         values.zonaWaktuAkad +
         "%0aTempat acara : " +
         values.tempatAkad +
+        "%0aMaps acara : " +
+        values.mapsAkad +
         "%0a%0aResepsi %0a" +
         dataResepsi +
         "%0aHari, Tanggal Bulan Tahun : " +
@@ -122,6 +132,8 @@ export default function CardForm(props) {
         values.zonaWaktuResepsi +
         "%0aTempat acara : " +
         values.tempatResepsi +
+        "%0aMaps acara : " +
+        values.mapsResepsi +
         "%0a%0aMusik : " +
         values.musik +
         "%0aLove Story : " +
@@ -367,6 +379,24 @@ export default function CardForm(props) {
                             </FloatingLabel>
                             <FloatingLabel
                               controlId="floatingInput"
+                              label="Anak ke/Putri ke"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="wanitaAnakKe"
+                                value={capitalize(values.wanitaAnakKe)}
+                                onChange={handleInputChange}
+                                required
+                                type="text"
+                                minLength={4}
+                                placeholder="Masukan Anak Ke"
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
                               label="Nama Kedua Orang Tua"
                               className="mb-3"
                             >
@@ -422,6 +452,24 @@ export default function CardForm(props) {
                               />
                               <Form.Control.Feedback type="invalid">
                                 Nama Lengkap Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Anak ke/Putra ke"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="priaAnakKe"
+                                value={capitalize(values.priaAnakKe)}
+                                onChange={handleInputChange}
+                                required
+                                type="text"
+                                minLength={4}
+                                placeholder="Masukan Anak Ke"
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
                             <FloatingLabel
@@ -485,7 +533,7 @@ export default function CardForm(props) {
                                 <FloatingLabel
                                   controlId="floatingInput"
                                   label="Nama Acara "
-                                  className="linkFoto"
+                                  className="formTambah mt-3"
                                 >
                                   <Form.Control
                                     name="lainnyaAkad"
@@ -533,7 +581,7 @@ export default function CardForm(props) {
                                 <FloatingLabel
                                   controlId="floatingInput"
                                   label="Tanggal Bulan Tahun"
-                                  className="mb-3"
+                                  className="formTanggal mb-3"
                                 >
                                   <Form.Control
                                     name="akad"
@@ -606,6 +654,23 @@ export default function CardForm(props) {
                                 Tempat Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Maps Acara"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="mapsAkad"
+                                value={capitalize(values.mapsAkad)}
+                                onChange={handleInputChange}
+                                required
+                                type="text"
+                                placeholder="Masukan Maps"
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Maps Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
                           </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">
@@ -636,7 +701,7 @@ export default function CardForm(props) {
                                 <FloatingLabel
                                   controlId="floatingInput"
                                   label="Nama Acara "
-                                  className="linkFoto"
+                                  className="formTambah mt-3"
                                 >
                                   <Form.Control
                                     name="lainnyaResepsi"
@@ -684,7 +749,7 @@ export default function CardForm(props) {
                                 <FloatingLabel
                                   controlId="floatingInput"
                                   label="Tanggal Bulan Tahun"
-                                  className="mb-3"
+                                  className="formTanggal mb-3"
                                 >
                                   <Form.Control
                                     name="resepsi"
@@ -756,6 +821,23 @@ export default function CardForm(props) {
                               />
                               <Form.Control.Feedback type="invalid">
                                 Tempat Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Maps Acara"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="mapsResepsi"
+                                value={capitalize(values.mapsResepsi)}
+                                onChange={handleInputChange}
+                                required
+                                type="text"
+                                placeholder="Masukan Maps"
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Maps Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
                           </Accordion.Body>
@@ -970,7 +1052,7 @@ export default function CardForm(props) {
                     <FloatingLabel
                       controlId="floatingInput"
                       label="Nomor Calon Pengantin "
-                      className="linkFoto"
+                      className="formTambah mt-3"
                     >
                       <Form.Control
                         name="nomorCatin"
