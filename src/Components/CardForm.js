@@ -63,12 +63,14 @@ export default function CardForm(props) {
   const [validated, setValidated] = useState(false);
   const [values, setValues] = useState(initialValues);
   const [visible, setVisible] = useState(false);
+  const [visibleGold, setVisibleGold] = useState(false);
   const [visibleAkad, setVisibleAkad] = useState(false);
   const [visibleResepsi, setVisibleResepsi] = useState(false);
   const capitalize = (s) =>
     s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
   const [data, setData] = useState("");
   const [dataResepsi, setDataResepsi] = useState("");
+
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === true) {
@@ -173,6 +175,14 @@ export default function CardForm(props) {
       setVisible(!visible);
     } else if (e.target.name === "daftarHadir" && e.target.value === "Tidak") {
       setVisible(false);
+    }
+    if (e.target.name === "paket" && e.target.value === "Gold") {
+      setVisibleGold(!visible);
+    } else if (
+      e.target.name === "paket" &&
+      (e.target.value === "Silver" || e.target.value === "Bronze")
+    ) {
+      setVisibleGold(false);
     }
     if (e.target.name === "namaAcaraAkad" && e.target.value === "Lainnya") {
       setVisibleAkad(!visibleAkad);
@@ -913,162 +923,167 @@ export default function CardForm(props) {
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
-
-                <Accordion flush>
-                  <Accordion.Item eventKey="0">
-                    <Accordion.Header>
-                      <i className="bi bi-chat-heart me-2"></i>Love Story
-                    </Accordion.Header>
-                    <Accordion.Body>
-                      <FloatingLabel
-                        controlId="floatingTextarea2"
-                        label="Ceritakan ceritamu disini"
-                      >
-                        <Form.Control
-                          name="loveStory"
-                          value={values.loveStory}
-                          onChange={handleInputChange}
-                          as="textarea"
-                          placeholder="Ceritakan ceritamu disini"
-                          style={{ height: "100px" }}
-                        />
-                      </FloatingLabel>
-                    </Accordion.Body>
-                  </Accordion.Item>
-                </Accordion>
-
-                <Accordion flush>
-                  <Accordion.Item eventKey="0">
-                    <Accordion.Header>
-                      <i className="bi bi-youtube me-2"></i>Live Streaming
-                    </Accordion.Header>
-                    <Accordion.Body>
-                      <Form.Group className="mb-2">
-                        <Form.Label className="labelForm">
-                          Akun Media Sosial
-                        </Form.Label>
-                        <Form.Control
-                          name="live"
-                          value={values.live}
-                          onChange={handleInputChange}
-                          type="text"
-                          placeholder="Masukan Link Media Sosial"
-                        />
-                      </Form.Group>
-                    </Accordion.Body>
-                  </Accordion.Item>
-                </Accordion>
-                <Accordion flush>
-                  <Accordion.Item eventKey="0">
-                    <Accordion.Header>
-                      <i className="bi bi bi-box2 me-2"></i>
-                      <div className="labelForm">Wedding Gift</div>
-                    </Accordion.Header>
-                    <Accordion.Body>
-                      <Accordion flush>
-                        <Accordion.Item eventKey="0">
-                          <Accordion.Header>
-                            <i className="bi bi-envelope me-2"></i>Amplop
-                            Digital
-                          </Accordion.Header>
-                          <Accordion.Body>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Nomor Rekening"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="nomorRek"
-                                value={values.nomorRek}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Nomor Rekening"
-                              />
-                            </FloatingLabel>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Nama Bank"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="namaBank"
-                                value={values.namaBank}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Nama Bank"
-                              />
-                            </FloatingLabel>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Atas Nama"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="atasNama"
-                                value={values.atasNama}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Atas Nama Bank"
-                              />
-                            </FloatingLabel>
-                          </Accordion.Body>
-                        </Accordion.Item>
-                      </Accordion>
-                      <Accordion flush>
-                        <Accordion.Item eventKey="0">
-                          <Accordion.Header>
-                            <i className="bi bi-gift me-2"></i>Kirim Hadiah
-                          </Accordion.Header>
-                          <Accordion.Body>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Alamat"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="alamat"
-                                value={values.alamat}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Alamat"
-                              />
-                            </FloatingLabel>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Nama Penerima"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="namaPenerima"
-                                value={values.namaPenerima}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Nama Penerima"
-                              />
-                            </FloatingLabel>
-                          </Accordion.Body>
-                        </Accordion.Item>
-                      </Accordion>
-                      <FloatingLabel
-                        controlId="floatingInput"
-                        label="Nomor WA Konfirmasi "
-                        className="mt-3"
-                      >
-                        <Form.Control
-                          name="waKonfirmasi"
-                          value={values.waKonfirmasi}
-                          onChange={handleInputChange}
-                          required
-                          type="text"
-                          placeholder="Masukan Nomor"
-                        />
-                        <Form.Control.Feedback type="invalid">
-                          Nomor Belum Diisi
-                        </Form.Control.Feedback>
-                      </FloatingLabel>
-                    </Accordion.Body>
-                  </Accordion.Item>
-                </Accordion>
+                {visibleGold && (
+                  <>
+                    <label className="mt-1">
+                      Data Tambahan Khusus Paket Gold
+                    </label>
+                    <Accordion flush>
+                      <Accordion.Item eventKey="0">
+                        <Accordion.Header>
+                          <i className="bi bi-chat-heart me-2"></i>Love Story
+                        </Accordion.Header>
+                        <Accordion.Body>
+                          <FloatingLabel
+                            controlId="floatingTextarea2"
+                            label="Ceritakan ceritamu disini"
+                          >
+                            <Form.Control
+                              name="loveStory"
+                              value={values.loveStory}
+                              onChange={handleInputChange}
+                              as="textarea"
+                              placeholder="Ceritakan ceritamu disini"
+                              style={{ height: "100px" }}
+                            />
+                          </FloatingLabel>
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    </Accordion>
+                    <Accordion flush>
+                      <Accordion.Item eventKey="0">
+                        <Accordion.Header>
+                          <i className="bi bi-youtube me-2"></i>Live Streaming
+                        </Accordion.Header>
+                        <Accordion.Body>
+                          <Form.Group className="mb-2">
+                            <Form.Label className="labelForm">
+                              Akun Media Sosial
+                            </Form.Label>
+                            <Form.Control
+                              name="live"
+                              value={values.live}
+                              onChange={handleInputChange}
+                              type="text"
+                              placeholder="Masukan Link Media Sosial"
+                            />
+                          </Form.Group>
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    </Accordion>
+                    <Accordion flush>
+                      <Accordion.Item eventKey="0">
+                        <Accordion.Header>
+                          <i className="bi bi bi-box2 me-2"></i>
+                          <div className="labelForm">Wedding Gift</div>
+                        </Accordion.Header>
+                        <Accordion.Body>
+                          <Accordion flush>
+                            <Accordion.Item eventKey="0">
+                              <Accordion.Header>
+                                <i className="bi bi-envelope me-2"></i>Amplop
+                                Digital
+                              </Accordion.Header>
+                              <Accordion.Body>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Nomor Rekening"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="nomorRek"
+                                    value={values.nomorRek}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Nomor Rekening"
+                                  />
+                                </FloatingLabel>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Nama Bank"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="namaBank"
+                                    value={values.namaBank}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Nama Bank"
+                                  />
+                                </FloatingLabel>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Atas Nama"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="atasNama"
+                                    value={values.atasNama}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Atas Nama Bank"
+                                  />
+                                </FloatingLabel>
+                              </Accordion.Body>
+                            </Accordion.Item>
+                          </Accordion>
+                          <Accordion flush>
+                            <Accordion.Item eventKey="0">
+                              <Accordion.Header>
+                                <i className="bi bi-gift me-2"></i>Kirim Hadiah
+                              </Accordion.Header>
+                              <Accordion.Body>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Alamat"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="alamat"
+                                    value={values.alamat}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Alamat"
+                                  />
+                                </FloatingLabel>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Nama Penerima"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="namaPenerima"
+                                    value={values.namaPenerima}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Nama Penerima"
+                                  />
+                                </FloatingLabel>
+                              </Accordion.Body>
+                            </Accordion.Item>
+                          </Accordion>
+                          <FloatingLabel
+                            controlId="floatingInput"
+                            label="Nomor WA Konfirmasi "
+                            className="mt-3"
+                          >
+                            <Form.Control
+                              name="waKonfirmasi"
+                              value={values.waKonfirmasi}
+                              onChange={handleInputChange}
+                              required
+                              type="text"
+                              placeholder="Masukan Nomor"
+                            />
+                            <Form.Control.Feedback type="invalid">
+                              Nomor Belum Diisi
+                            </Form.Control.Feedback>
+                          </FloatingLabel>
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    </Accordion>
+                  </>
+                )}
                 <Form.Group className="mb-2">
                   <Form.Label className="labelForm">
                     Reservasi Kehadiran Lewat WA
