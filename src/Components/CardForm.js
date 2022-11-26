@@ -100,7 +100,7 @@ export default function CardForm(props) {
         values.lengkapWanita +
         "%0aNama Kedua Orang Tua : Putri Ke " +
         values.wanitaAnakKe +
-        "dari " +
+        " dari " +
         values.namaIbuWanita +
         " dan " +
         values.namaBapakWanita +
@@ -110,7 +110,7 @@ export default function CardForm(props) {
         values.lengkapPria +
         "%0aNama Kedua Orang Tua : Putra Ke " +
         values.priaAnakKe +
-        "dari " +
+        " dari " +
         values.namaIbuPria +
         " dan " +
         values.namaBapakPria +
@@ -957,9 +957,7 @@ export default function CardForm(props) {
                         </Accordion.Header>
                         <Accordion.Body>
                           <Form.Group className="mb-2">
-                            <Form.Label className="labelForm">
-                              Akun Media Sosial
-                            </Form.Label>
+                            <Form.Label>Akun Media Sosial</Form.Label>
                             <Form.Control
                               name="live"
                               value={values.live}
@@ -975,7 +973,7 @@ export default function CardForm(props) {
                       <Accordion.Item eventKey="0">
                         <Accordion.Header>
                           <i className="bi bi bi-box2 me-2"></i>
-                          <div className="labelForm">Wedding Gift</div>
+                          <div>Wedding Gift</div>
                         </Accordion.Header>
                         <Accordion.Body>
                           <Accordion flush>
@@ -1082,65 +1080,85 @@ export default function CardForm(props) {
                         </Accordion.Body>
                       </Accordion.Item>
                     </Accordion>
+                    <Accordion flush>
+                      <Accordion.Item eventKey="0">
+                        <Accordion.Header>
+                          <i className="bi bi bi-whatsapp me-2"></i>
+                          <div>Reservasi Kehadiran Lewat WA</div>
+                        </Accordion.Header>
+                        <Accordion.Body>
+                          <Form.Group className="mb-2">
+                            <Form.Label>
+                              Reservasi Kehadiran Lewat WA
+                            </Form.Label>
+                            <Form.Select
+                              name="daftarHadir"
+                              value={values.daftarHadir}
+                              onChange={handleInputChange}
+                              required
+                            >
+                              <option value="" disabled hidden>
+                                Silakan Pilih
+                              </option>
+                              <option value="Iya">Iya</option>
+                              <option value="Tidak">Tidak</option>
+                            </Form.Select>
+                            <Form.Control.Feedback type="invalid">
+                              Daftar Hadir Belum Dipilih
+                            </Form.Control.Feedback>
+                            {visible && (
+                              <FloatingLabel
+                                controlId="floatingInput"
+                                label="Nomor Calon Pengantin "
+                                className="formTambah mt-3"
+                              >
+                                <Form.Control
+                                  name="nomorCatin"
+                                  value={values.nomorCatin}
+                                  onChange={handleInputChange}
+                                  required
+                                  type="text"
+                                  placeholder="Masukan Nomor"
+                                />
+                                <Form.Control.Feedback type="invalid">
+                                  Nomor Belum Diisi
+                                </Form.Control.Feedback>
+                              </FloatingLabel>
+                            )}
+                          </Form.Group>
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    </Accordion>
+                    <Accordion flush>
+                      <Accordion.Item eventKey="0">
+                        <Accordion.Header>
+                          <i className="bi bi bi-qr-code me-2"></i>
+                          <div>QR Code RSVP</div>
+                        </Accordion.Header>
+                        <Accordion.Body>
+                          <Form.Group className="mb-2">
+                            <Form.Label>QR Code RSVP</Form.Label>
+                            <Form.Select
+                              name="rsvp"
+                              value={values.rsvp}
+                              onChange={handleInputChange}
+                              required
+                            >
+                              <option value="" disabled hidden>
+                                Silakan Pilih
+                              </option>
+                              <option value="Iya">Iya</option>
+                              <option value="Tidak">Tidak</option>
+                            </Form.Select>
+                            <Form.Control.Feedback type="invalid">
+                              RSVP Belum Dipilih
+                            </Form.Control.Feedback>
+                          </Form.Group>
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    </Accordion>
                   </>
                 )}
-                <Form.Group className="mb-2">
-                  <Form.Label className="labelForm">
-                    Reservasi Kehadiran Lewat WA
-                  </Form.Label>
-                  <Form.Select
-                    name="daftarHadir"
-                    value={values.daftarHadir}
-                    onChange={handleInputChange}
-                    required
-                  >
-                    <option value="" disabled hidden>
-                      Pilih
-                    </option>
-                    <option value="Iya">Iya</option>
-                    <option value="Tidak">Tidak</option>
-                  </Form.Select>
-                  <Form.Control.Feedback type="invalid">
-                    Daftar Hadir Belum Dipilih
-                  </Form.Control.Feedback>
-                  {visible && (
-                    <FloatingLabel
-                      controlId="floatingInput"
-                      label="Nomor Calon Pengantin "
-                      className="formTambah mt-3"
-                    >
-                      <Form.Control
-                        name="nomorCatin"
-                        value={values.nomorCatin}
-                        onChange={handleInputChange}
-                        required
-                        type="text"
-                        placeholder="Masukan Nomor"
-                      />
-                      <Form.Control.Feedback type="invalid">
-                        Nomor Belum Diisi
-                      </Form.Control.Feedback>
-                    </FloatingLabel>
-                  )}
-                </Form.Group>
-                <Form.Group className="mb-2">
-                  <Form.Label className="labelForm">QR Code RSVP</Form.Label>
-                  <Form.Select
-                    name="rsvp"
-                    value={values.rsvp}
-                    onChange={handleInputChange}
-                    required
-                  >
-                    <option value="" disabled hidden>
-                      Pilih
-                    </option>
-                    <option value="Iya">Iya</option>
-                    <option value="Tidak">Tidak</option>
-                  </Form.Select>
-                  <Form.Control.Feedback type="invalid">
-                    RSVP Belum Dipilih
-                  </Form.Control.Feedback>
-                </Form.Group>
                 <Button type="submit" className="Button mt-4 mb-2">
                   <i className="bi bi-whatsapp me-2"></i>
                   Kirim
