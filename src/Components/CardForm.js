@@ -23,11 +23,13 @@ const initialValues = {
   panggilanWanita: "",
   lengkapWanita: "",
   wanitaAnakKe: "",
-  orangTuaWanita: "",
+  namaIbuWanita: "",
+  namaBapakWanita: "",
   panggilanPria: "",
   lengkapPria: "",
   priaAnakKe: "",
-  orangTuaPria: "",
+  namaIbuPria: "",
+  namaBapakPria: "",
   akad: "",
   namaAcaraAkad: "",
   lainnyaAkad: "",
@@ -97,7 +99,9 @@ export default function CardForm(props) {
         "%0aNama Kedua Orang Tua : Putri Ke " +
         values.wanitaAnakKe +
         "dari " +
-        values.orangTuaWanita +
+        values.namaIbuWanita +
+        " dan " +
+        values.namaBapakWanita +
         "%0a%0aMempelai Pria %0aNama Panggilan : " +
         values.panggilanPria +
         "%0aNama Lengkap : " +
@@ -105,7 +109,9 @@ export default function CardForm(props) {
         "%0aNama Kedua Orang Tua : Putra Ke " +
         values.priaAnakKe +
         "dari " +
-        values.orangTuaPria +
+        values.namaIbuPria +
+        " dan " +
+        values.namaBapakPria +
         "%0a%0aRincian Acara %0a-Akad Nikah, Pemberkatan, dll %0a" +
         data +
         "%0aHari, Tanggal Bulan Tahun : " +
@@ -388,7 +394,6 @@ export default function CardForm(props) {
                                 onChange={handleInputChange}
                                 required
                                 type="text"
-                                minLength={4}
                                 placeholder="Masukan Anak Ke"
                               />
                               <Form.Control.Feedback type="invalid">
@@ -397,20 +402,38 @@ export default function CardForm(props) {
                             </FloatingLabel>
                             <FloatingLabel
                               controlId="floatingInput"
-                              label="Nama Kedua Orang Tua"
+                              label="Nama Ibu"
                               className="mb-3"
                             >
                               <Form.Control
-                                name="orangTuaWanita"
-                                value={capitalize(values.orangTuaWanita)}
+                                name="namaIbuWanita"
+                                value={capitalize(values.namaIbuWanita)}
                                 onChange={handleInputChange}
                                 type="text"
                                 required
-                                placeholder="Nama Kedua orang tua"
+                                placeholder="Nama Ibu"
                                 // defaultValue="Putri Dari "
                               />
                               <Form.Control.Feedback type="invalid">
-                                Nama orangtua Belum Diisi
+                                Nama Ibu Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Nama Bapak"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="namaBapakWanita"
+                                value={capitalize(values.namaBapakWanita)}
+                                onChange={handleInputChange}
+                                type="text"
+                                required
+                                placeholder="Nama Bapak"
+                                // defaultValue="Putri Dari "
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Nama Bapak Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
                           </Accordion.Body>
@@ -465,7 +488,6 @@ export default function CardForm(props) {
                                 onChange={handleInputChange}
                                 required
                                 type="text"
-                                minLength={4}
                                 placeholder="Masukan Anak Ke"
                               />
                               <Form.Control.Feedback type="invalid">
@@ -474,20 +496,38 @@ export default function CardForm(props) {
                             </FloatingLabel>
                             <FloatingLabel
                               controlId="floatingInput"
-                              label="Nama Kedua Orang Tua"
+                              label="Nama Ibu"
                               className="mb-3"
                             >
                               <Form.Control
                                 required
-                                name="orangTuaPria"
-                                value={capitalize(values.orangTuaPria)}
+                                name="namaIbuPria"
+                                value={capitalize(values.namaIbuPria)}
                                 onChange={handleInputChange}
                                 type="text"
-                                placeholder="Masukan Nama Orangtua"
+                                placeholder="Masukan Nama Ibu"
                                 // defaultValue="Putra Dari "
                               />
                               <Form.Control.Feedback type="invalid">
-                                Nama Orang tua Belum Diisi
+                                Nama Ibu Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Nama Bapak"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="namaBapakPria"
+                                value={capitalize(values.namaBapakPria)}
+                                onChange={handleInputChange}
+                                type="text"
+                                required
+                                placeholder="Nama Bapak"
+                                // defaultValue="Putri Dari "
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Nama Bapak Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
                           </Accordion.Body>
