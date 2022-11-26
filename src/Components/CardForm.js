@@ -70,6 +70,7 @@ export default function CardForm(props) {
     s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
   const [data, setData] = useState("");
   const [dataResepsi, setDataResepsi] = useState("");
+  const [dataGold, setDataGold] = useState("");
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -86,12 +87,8 @@ export default function CardForm(props) {
         values.paket +
         "%0aFoto : " +
         values.foto +
-        "%0aLink Foto : " +
-        values.linkFoto +
         "%0aDaftar Kehadiran : " +
         values.daftarHadir +
-        "%0aNomor Calon Pengantin : " +
-        values.nomorCatin +
         "%0aNama yang didahulukan : " +
         values.namaAwal +
         "%0a%0aMempelai Wanita %0aNama Panggilan " +
@@ -144,24 +141,7 @@ export default function CardForm(props) {
         values.mapsResepsi +
         "%0a%0aMusik : " +
         values.musik +
-        "%0aLove Story : " +
-        values.loveStory +
-        "%0aLive Streaming : " +
-        values.live +
-        "%0a%0aWedding Gift %0a%0aAmplop Digital%0aNomor Rekening : " +
-        values.nomorRek +
-        "%0aNama Bank : " +
-        values.namaBank +
-        "%0aAtas Nama : " +
-        values.atasNama +
-        "%0a%0aKirim Hadiah%0aAlamat : " +
-        values.alamat +
-        "%0aNama Penerima : " +
-        values.namaPenerima +
-        "%0aWA Konfirmasi Amplop/Penerima : " +
-        values.waKonfirmasi +
-        "%0aQR Code RSVP : " +
-        values.rsvp;
+        dataGold;
     }
     // console.log(data);
     event.preventDefault();
@@ -178,11 +158,32 @@ export default function CardForm(props) {
     }
     if (e.target.name === "paket" && e.target.value === "Gold") {
       setVisibleGold(!visible);
+      setDataGold(
+        "%0aLove Story : " +
+          values.loveStory +
+          "%0aLive Streaming : " +
+          values.live +
+          "%0a%0aWedding Gift %0a%0aAmplop Digital%0aNomor Rekening : " +
+          values.nomorRek +
+          "%0aNama Bank : " +
+          values.namaBank +
+          "%0aAtas Nama : " +
+          values.atasNama +
+          "%0a%0aKirim Hadiah%0aAlamat : " +
+          values.alamat +
+          "%0aNama Penerima : " +
+          values.namaPenerima +
+          "%0aWA Konfirmasi Amplop/Penerima : " +
+          values.waKonfirmasi +
+          "%0aQR Code RSVP : " +
+          values.rsvp
+      );
     } else if (
       e.target.name === "paket" &&
       (e.target.value === "Silver" || e.target.value === "Bronze")
     ) {
       setVisibleGold(false);
+      setDataGold("");
     }
     if (e.target.name === "namaAcaraAkad" && e.target.value === "Lainnya") {
       setVisibleAkad(!visibleAkad);
@@ -210,6 +211,7 @@ export default function CardForm(props) {
     } else {
       setDataResepsi("%0aAcara : " + values.namaAcaraResepsi);
     }
+
     setValues({
       ...values,
       [name]: value,
