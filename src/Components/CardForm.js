@@ -84,15 +84,15 @@ export default function CardForm(props) {
         "https://api.whatsapp.com/send/?phone=6285701119467&text=" +
         "1. Tema : " +
         values.tema +
-        "%0a2. Bahasa Undangan : " +
+        "%0a%0a2. Bahasa Undangan : " +
         values.bahasa +
-        "%0a3. Paket Undangan Web : " +
+        "%0a%0a3. Paket Undangan Web : " +
         values.paket +
-        "%0a4. Penggunaan Foto : " +
+        "%0a%0a4. Penggunaan Foto : " +
         values.foto +
-        "%0a5. Nama yang didahulukan : " +
+        "%0a%0a5. Nama yang didahulukan : " +
         values.namaAwal +
-        "%0a%0a6. Mempelai Wanita %0aNama Panggilan " +
+        "%0a%0a6. Mempelai Wanita %0a-Nama Panggilan " +
         values.panggilanWanita +
         "%0a-Nama Lengkap : " +
         values.lengkapWanita +
@@ -102,7 +102,7 @@ export default function CardForm(props) {
         values.namaIbuWanita +
         " dan " +
         values.namaBapakWanita +
-        "%0a%0a7. Mempelai Pria %0aNama Panggilan : " +
+        "%0a%0a7. Mempelai Pria %0a-Nama Panggilan : " +
         values.panggilanPria +
         "%0a-Nama Lengkap : " +
         values.lengkapPria +
@@ -112,7 +112,7 @@ export default function CardForm(props) {
         values.namaIbuPria +
         " dan " +
         values.namaBapakPria +
-        "%0a%0a8. Rincian Acara %0a-Akad Nikah, Pemberkatan, dll %0a" +
+        "%0a%0a8. Rincian Acara %0a-Akad Nikah, Pemberkatan, dll" +
         data +
         "%0a-Hari, Tanggal Bulan Tahun : " +
         values.hariAkad +
@@ -126,7 +126,7 @@ export default function CardForm(props) {
         values.tempatAkad +
         "%0a-Maps acara : " +
         values.mapsAkad +
-        "%0a%0a9. Resepsi %0a" +
+        "%0a%0a9. Resepsi" +
         dataResepsi +
         "%0a-Hari, Tanggal Bulan Tahun : " +
         values.hariResepsi +
@@ -160,31 +160,31 @@ export default function CardForm(props) {
     if (e.target.name === "paket" && e.target.value === "Gold") {
       setVisibleGold(!visible);
       setDataGold(
-        "%0a1. Love Story : " +
+        "%0a%0aData Tambahan Paket Gold %0a%0a1. Love Story : " +
           values.loveStory +
-          "%0a2. Live Streaming : " +
+          "%0a%0a2. Live Streaming : " +
           values.live +
-          "%0a%0a3. Wedding Gift %0a%0aAmplop Digital 1%0aNomor Rekening 1 : " +
+          "%0a%0a3. Wedding Gift %0a%0a-Amplop Digital 1%0a-Nomor Rekening 1 : " +
           values.nomorRek +
-          "%0aNama Bank 1 : " +
+          "%0a-Nama Bank 1 : " +
           values.namaBank +
-          "%0aAtas Nama 1 : " +
+          "%0a-Atas Nama 1 : " +
           values.atasNama +
-          "%0a%0aAmplop Digital 2%0aNomor Rekening 2 : " +
+          "%0a%0a-Amplop Digital 2%0-aNomor Rekening 2 : " +
           values.nomorRek2 +
-          "%0aNama Bank 2 : " +
+          "%0a-Nama Bank 2 : " +
           values.namaBank2 +
-          "%0aAtas Nama 2 : " +
+          "%0a-Atas Nama 2 : " +
           values.atasNama2 +
-          "%0a%0aKirim Hadiah%0aAlamat : " +
+          "%0a%0a-Kirim Hadiah%0a-Alamat : " +
           values.alamat +
-          "%0aNama Penerima : " +
+          "%0a-Nama Penerima : " +
           values.namaPenerima +
-          "%0aWA Konfirmasi Amplop/Penerima : " +
+          "%0a-WA Konfirmasi Amplop/Penerima : " +
           values.waKonfirmasi +
-          "%0a4. Reservasi Kehadiran via WA : " +
+          "%0a%0a4. Reservasi Kehadiran via WA : " +
           values.daftarHadir +
-          "%0a5. QR Code RSVP : " +
+          "%0a%0a5. QR Code RSVP : " +
           values.rsvp
       );
     } else if (
@@ -211,14 +211,14 @@ export default function CardForm(props) {
       setVisibleResepsi(false);
     }
     if (!!values.lainnyaAkad) {
-      setData("%0aAcara : " + values.lainnyaAkad);
+      setData("%0a-Acara : " + values.lainnyaAkad);
     } else {
-      setData("%0aAcara : " + values.namaAcaraAkad);
+      setData("%0a-Acara : " + values.namaAcaraAkad);
     }
     if (!!values.lainnyaResepsi) {
-      setDataResepsi("%0aAcara : " + values.lainnyaResepsi);
+      setDataResepsi("%0a-Acara : " + values.lainnyaResepsi);
     } else {
-      setDataResepsi("%0aAcara : " + values.namaAcaraResepsi);
+      setDataResepsi("%0a-Acara : " + values.namaAcaraResepsi);
     }
 
     setValues({
