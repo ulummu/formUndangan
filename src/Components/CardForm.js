@@ -52,6 +52,9 @@ const initialValues = {
   nomorRek: "",
   namaBank: "",
   atasNama: "",
+  nomorRek2: "",
+  namaBank2: "",
+  atasNama2: "",
   daftarHadir: "",
   nomorCatin: "",
   alamat: "",
@@ -79,67 +82,65 @@ export default function CardForm(props) {
       event.stopPropagation();
       window.location.href =
         "https://api.whatsapp.com/send/?phone=6285701119467&text=" +
-        "Tema : " +
+        "1. Tema : " +
         values.tema +
-        "%0aBahasa : " +
+        "%0a2. Bahasa Undangan : " +
         values.bahasa +
-        "%0aPaket : " +
+        "%0a3. Paket Undangan Web : " +
         values.paket +
-        "%0aFoto : " +
+        "%0a4. Penggunaan Foto : " +
         values.foto +
-        "%0aDaftar Kehadiran : " +
-        values.daftarHadir +
-        "%0aNama yang didahulukan : " +
+        "%0a5. Nama yang didahulukan : " +
         values.namaAwal +
-        "%0a%0aMempelai Wanita %0aNama Panggilan " +
+        "%0a%0a6. Mempelai Wanita %0aNama Panggilan " +
         values.panggilanWanita +
-        "%0aNama Lengkap : " +
+        "%0a-Nama Lengkap : " +
         values.lengkapWanita +
-        "%0aNama Kedua Orang Tua : Putri Ke " +
+        "%0a-Nama Kedua Orang Tua : Putri Ke " +
         values.wanitaAnakKe +
         " dari " +
         values.namaIbuWanita +
         " dan " +
         values.namaBapakWanita +
-        "%0a%0aMempelai Pria %0aNama Panggilan : " +
+        "%0a%0a7. Mempelai Pria %0aNama Panggilan : " +
         values.panggilanPria +
-        "%0aNama Lengkap : " +
+        "%0a-Nama Lengkap : " +
         values.lengkapPria +
-        "%0aNama Kedua Orang Tua : Putra Ke " +
+        "%0a-Nama Kedua Orang Tua : Putra Ke " +
         values.priaAnakKe +
         " dari " +
         values.namaIbuPria +
         " dan " +
         values.namaBapakPria +
-        "%0a%0aRincian Acara %0a-Akad Nikah, Pemberkatan, dll %0a" +
+        "%0a%0a8. Rincian Acara %0a-Akad Nikah, Pemberkatan, dll %0a" +
         data +
-        "%0aHari, Tanggal Bulan Tahun : " +
+        "%0a-Hari, Tanggal Bulan Tahun : " +
         values.hariAkad +
         ", " +
         values.akad +
-        "%0aPukul : " +
+        "%0a-Pukul : " +
         values.pukulAkad +
         " " +
         values.zonaWaktuAkad +
-        "%0aTempat acara : " +
+        "%0a-Tempat acara : " +
         values.tempatAkad +
-        "%0aMaps acara : " +
+        "%0a-Maps acara : " +
         values.mapsAkad +
-        "%0a%0aResepsi %0a" +
+        "%0a%0a9. Resepsi %0a" +
         dataResepsi +
-        "%0aHari, Tanggal Bulan Tahun : " +
+        "%0a-Hari, Tanggal Bulan Tahun : " +
         values.hariResepsi +
         ", " +
         values.resepsi +
-        "%0aPukul : " +
+        "%0a-Pukul : " +
         values.pukulResepsi +
         " " +
         values.zonaWaktuResepsi +
-        "%0aTempat acara : " +
+        "%0a-Tempat acara : " +
         values.tempatResepsi +
-        "%0aMaps acara : " +
+        "%0a-Maps acara : " +
         values.mapsResepsi +
-        "%0a%0aMusik : " +
+        "%0a%0a10. Musik : " +
         values.musik +
         dataGold;
     }
@@ -159,23 +160,31 @@ export default function CardForm(props) {
     if (e.target.name === "paket" && e.target.value === "Gold") {
       setVisibleGold(!visible);
       setDataGold(
-        "%0aLove Story : " +
+        "%0a1. Love Story : " +
           values.loveStory +
-          "%0aLive Streaming : " +
+          "%0a2. Live Streaming : " +
           values.live +
-          "%0a%0aWedding Gift %0a%0aAmplop Digital%0aNomor Rekening : " +
+          "%0a%0a3. Wedding Gift %0a%0aAmplop Digital 1%0aNomor Rekening 1 : " +
           values.nomorRek +
-          "%0aNama Bank : " +
+          "%0aNama Bank 1 : " +
           values.namaBank +
-          "%0aAtas Nama : " +
+          "%0aAtas Nama 1 : " +
           values.atasNama +
+          "%0a%0aAmplop Digital 2%0aNomor Rekening 2 : " +
+          values.nomorRek2 +
+          "%0aNama Bank 2 : " +
+          values.namaBank2 +
+          "%0aAtas Nama 2 : " +
+          values.atasNama2 +
           "%0a%0aKirim Hadiah%0aAlamat : " +
           values.alamat +
           "%0aNama Penerima : " +
           values.namaPenerima +
           "%0aWA Konfirmasi Amplop/Penerima : " +
           values.waKonfirmasi +
-          "%0aQR Code RSVP : " +
+          "%0a4. Reservasi Kehadiran via WA : " +
+          values.daftarHadir +
+          "%0a5. QR Code RSVP : " +
           values.rsvp
       );
     } else if (
@@ -414,24 +423,6 @@ export default function CardForm(props) {
                             </FloatingLabel>
                             <FloatingLabel
                               controlId="floatingInput"
-                              label="Nama Ibu"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="namaIbuWanita"
-                                value={capitalize(values.namaIbuWanita)}
-                                onChange={handleInputChange}
-                                type="text"
-                                required
-                                placeholder="Nama Ibu"
-                                // defaultValue="Putri Dari "
-                              />
-                              <Form.Control.Feedback type="invalid">
-                                Nama Ibu Belum Diisi
-                              </Form.Control.Feedback>
-                            </FloatingLabel>
-                            <FloatingLabel
-                              controlId="floatingInput"
                               label="Nama Bapak"
                               className="mb-3"
                             >
@@ -446,6 +437,24 @@ export default function CardForm(props) {
                               />
                               <Form.Control.Feedback type="invalid">
                                 Nama Bapak Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Nama Ibu"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="namaIbuWanita"
+                                value={capitalize(values.namaIbuWanita)}
+                                onChange={handleInputChange}
+                                type="text"
+                                required
+                                placeholder="Nama Ibu"
+                                // defaultValue="Putri Dari "
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Nama Ibu Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
                           </Accordion.Body>
@@ -508,24 +517,6 @@ export default function CardForm(props) {
                             </FloatingLabel>
                             <FloatingLabel
                               controlId="floatingInput"
-                              label="Nama Ibu"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                required
-                                name="namaIbuPria"
-                                value={capitalize(values.namaIbuPria)}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Masukan Nama Ibu"
-                                // defaultValue="Putra Dari "
-                              />
-                              <Form.Control.Feedback type="invalid">
-                                Nama Ibu Belum Diisi
-                              </Form.Control.Feedback>
-                            </FloatingLabel>
-                            <FloatingLabel
-                              controlId="floatingInput"
                               label="Nama Bapak"
                               className="mb-3"
                             >
@@ -540,6 +531,24 @@ export default function CardForm(props) {
                               />
                               <Form.Control.Feedback type="invalid">
                                 Nama Bapak Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Nama Ibu"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                required
+                                name="namaIbuPria"
+                                value={capitalize(values.namaIbuPria)}
+                                onChange={handleInputChange}
+                                type="text"
+                                placeholder="Masukan Nama Ibu"
+                                // defaultValue="Putra Dari "
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Nama Ibu Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
                           </Accordion.Body>
@@ -577,7 +586,7 @@ export default function CardForm(props) {
                                 <option value="" disabled hidden>
                                   Silakan Pilih
                                 </option>
-                                <option value="Akad">Akad</option>
+                                <option value="Akad Nikah">Akad Nikah</option>
                                 <option value="Pemberkatan">Pemberkatan</option>
                                 <option value="Lainnya">Lainnya</option>
                               </Form.Select>
@@ -715,7 +724,6 @@ export default function CardForm(props) {
                                 name="mapsAkad"
                                 value={capitalize(values.mapsAkad)}
                                 onChange={handleInputChange}
-                                required
                                 type="text"
                                 placeholder="Masukan Maps"
                               />
@@ -884,7 +892,6 @@ export default function CardForm(props) {
                                 name="mapsResepsi"
                                 value={capitalize(values.mapsResepsi)}
                                 onChange={handleInputChange}
-                                required
                                 type="text"
                                 placeholder="Masukan Maps"
                               />
@@ -982,7 +989,7 @@ export default function CardForm(props) {
                             <Accordion.Item eventKey="0">
                               <Accordion.Header>
                                 <i className="bi bi-envelope me-2"></i>Amplop
-                                Digital
+                                Digital 1
                               </Accordion.Header>
                               <Accordion.Body>
                                 <FloatingLabel
@@ -1019,6 +1026,53 @@ export default function CardForm(props) {
                                   <Form.Control
                                     name="atasNama"
                                     value={values.atasNama}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Atas Nama Bank"
+                                  />
+                                </FloatingLabel>
+                              </Accordion.Body>
+                            </Accordion.Item>
+                            <Accordion.Item eventKey="0">
+                              <Accordion.Header>
+                                <i className="bi bi-envelope me-2"></i>Amplop
+                                Digital 2
+                              </Accordion.Header>
+                              <Accordion.Body>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Nomor Rekening"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="nomorRek2"
+                                    value={values.nomorRek2}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Nomor Rekening"
+                                  />
+                                </FloatingLabel>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Nama Bank"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="namaBank2"
+                                    value={values.namaBank2}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Nama Bank"
+                                  />
+                                </FloatingLabel>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Atas Nama"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="atasNama2"
+                                    value={values.atasNama2}
                                     onChange={handleInputChange}
                                     type="text"
                                     placeholder="Atas Nama Bank"
