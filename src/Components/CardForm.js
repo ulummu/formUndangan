@@ -74,76 +74,167 @@ export default function CardForm(props) {
   const [data, setData] = useState("");
   const [dataResepsi, setDataResepsi] = useState("");
   const [dataGold, setDataGold] = useState("");
-
+  // useEffect(() => {}, [dataGold]);
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === true) {
       event.preventDefault();
       event.stopPropagation();
-      window.location.href =
-        "https://api.whatsapp.com/send/?phone=6285701119467&text=" +
-        "1. Tema : " +
-        values.tema +
-        "%0a%0a2. Bahasa Undangan : " +
-        values.bahasa +
-        "%0a%0a3. Paket Undangan Web : " +
-        values.paket +
-        "%0a%0a4. Penggunaan Foto : " +
-        values.foto +
-        "%0a%0a5. Nama yang didahulukan : " +
-        values.namaAwal +
-        "%0a%0a6. Mempelai Wanita %0a-Nama Panggilan " +
-        values.panggilanWanita +
-        "%0a-Nama Lengkap : " +
-        values.lengkapWanita +
-        "%0a-Nama Kedua Orang Tua : Putri Ke " +
-        values.wanitaAnakKe +
-        " dari " +
-        values.namaIbuWanita +
-        " dan " +
-        values.namaBapakWanita +
-        "%0a%0a7. Mempelai Pria %0a-Nama Panggilan : " +
-        values.panggilanPria +
-        "%0a-Nama Lengkap : " +
-        values.lengkapPria +
-        "%0a-Nama Kedua Orang Tua : Putra Ke " +
-        values.priaAnakKe +
-        " dari " +
-        values.namaIbuPria +
-        " dan " +
-        values.namaBapakPria +
-        "%0a%0a8. Rincian Acara %0a-Akad Nikah, Pemberkatan, dll" +
-        data +
-        "%0a-Hari, Tanggal Bulan Tahun : " +
-        values.hariAkad +
-        ", " +
-        values.akad +
-        "%0a-Pukul : " +
-        values.pukulAkad +
-        " " +
-        values.zonaWaktuAkad +
-        "%0a-Tempat acara : " +
-        values.tempatAkad +
-        "%0a-Maps acara : " +
-        values.mapsAkad +
-        "%0a%0a9. Resepsi" +
-        dataResepsi +
-        "%0a-Hari, Tanggal Bulan Tahun : " +
-        values.hariResepsi +
-        ", " +
-        values.resepsi +
-        "%0a-Pukul : " +
-        values.pukulResepsi +
-        " " +
-        values.zonaWaktuResepsi +
-        "%0a-Tempat acara : " +
-        values.tempatResepsi +
-        "%0a-Maps acara : " +
-        values.mapsResepsi +
-        "%0a%0a10. Musik : " +
-        values.musik +
-        dataGold;
+      if (dataGold === 1) {
+        window.location.href =
+          "https://api.whatsapp.com/send/?phone=6285701119467&text=" +
+          "1. Tema : " +
+          values.tema +
+          "%0a%0a2. Bahasa Undangan : " +
+          values.bahasa +
+          "%0a%0a3. Paket Undangan Web : " +
+          values.paket +
+          "%0a%0a4. Penggunaan Foto : " +
+          values.foto +
+          "%0a%0a5. Nama yang didahulukan : " +
+          values.namaAwal +
+          "%0a%0a6. Mempelai Wanita %0a-Nama Panggilan " +
+          values.panggilanWanita +
+          "%0a-Nama Lengkap : " +
+          values.lengkapWanita +
+          "%0a-Nama Kedua Orang Tua : Putri Ke " +
+          values.wanitaAnakKe +
+          " dari " +
+          values.namaIbuWanita +
+          " dan " +
+          values.namaBapakWanita +
+          "%0a%0a7. Mempelai Pria %0a-Nama Panggilan : " +
+          values.panggilanPria +
+          "%0a-Nama Lengkap : " +
+          values.lengkapPria +
+          "%0a-Nama Kedua Orang Tua : Putra Ke " +
+          values.priaAnakKe +
+          " dari " +
+          values.namaIbuPria +
+          " dan " +
+          values.namaBapakPria +
+          "%0a%0a8. Rincian Acara %0a-Akad Nikah, Pemberkatan, dll" +
+          data +
+          "%0a-Hari, Tanggal Bulan Tahun : " +
+          values.hariAkad +
+          ", " +
+          values.akad +
+          "%0a-Pukul : " +
+          values.pukulAkad +
+          " " +
+          values.zonaWaktuAkad +
+          "%0a-Tempat acara : " +
+          values.tempatAkad +
+          "%0a-Maps acara : " +
+          values.mapsAkad +
+          "%0a%0a9. Resepsi" +
+          dataResepsi +
+          "%0a-Hari, Tanggal Bulan Tahun : " +
+          values.hariResepsi +
+          ", " +
+          values.resepsi +
+          "%0a-Pukul : " +
+          values.pukulResepsi +
+          " " +
+          values.zonaWaktuResepsi +
+          "%0a-Tempat acara : " +
+          values.tempatResepsi +
+          "%0a-Maps acara : " +
+          values.mapsResepsi +
+          "%0a%0a10. Musik : " +
+          values.musik +
+          "%0a%0aData Tambahan Paket Gold %0a%0a1. Love Story : " +
+          values.loveStory +
+          "%0a%0a2. Live Streaming : " +
+          values.live +
+          "%0a%0a3. Wedding Gift %0a%0a-Amplop Digital 1%0a-Nomor Rekening 1 : " +
+          values.nomorRek +
+          "%0a-Nama Bank 1 : " +
+          values.namaBank +
+          "%0a-Atas Nama 1 : " +
+          values.atasNama +
+          "%0a%0a-Amplop Digital 2%0a-Nomor Rekening 2 : " +
+          values.nomorRek2 +
+          "%0a-Nama Bank 2 : " +
+          values.namaBank2 +
+          "%0a-Atas Nama 2 : " +
+          values.atasNama2 +
+          "%0a%0a-Kirim Hadiah%0a-Alamat : " +
+          values.alamat +
+          "%0a-Nama Penerima : " +
+          values.namaPenerima +
+          "%0a-WA Konfirmasi Amplop/Penerima : " +
+          values.waKonfirmasi +
+          "%0a%0a4. Reservasi Kehadiran via WA : " +
+          values.daftarHadir +
+          "%0a%0a5. QR Code RSVP : " +
+          values.rsvp;
+      } else {
+        window.location.href =
+          "https://api.whatsapp.com/send/?phone=6285701119467&text=" +
+          "1. Tema : " +
+          values.tema +
+          "%0a%0a2. Bahasa Undangan : " +
+          values.bahasa +
+          "%0a%0a3. Paket Undangan Web : " +
+          values.paket +
+          "%0a%0a4. Penggunaan Foto : " +
+          values.foto +
+          "%0a%0a5. Nama yang didahulukan : " +
+          values.namaAwal +
+          "%0a%0a6. Mempelai Wanita %0a-Nama Panggilan " +
+          values.panggilanWanita +
+          "%0a-Nama Lengkap : " +
+          values.lengkapWanita +
+          "%0a-Nama Kedua Orang Tua : Putri Ke " +
+          values.wanitaAnakKe +
+          " dari " +
+          values.namaIbuWanita +
+          " dan " +
+          values.namaBapakWanita +
+          "%0a%0a7. Mempelai Pria %0a-Nama Panggilan : " +
+          values.panggilanPria +
+          "%0a-Nama Lengkap : " +
+          values.lengkapPria +
+          "%0a-Nama Kedua Orang Tua : Putra Ke " +
+          values.priaAnakKe +
+          " dari " +
+          values.namaIbuPria +
+          " dan " +
+          values.namaBapakPria +
+          "%0a%0a8. Rincian Acara %0a-Akad Nikah, Pemberkatan, dll" +
+          data +
+          "%0a-Hari, Tanggal Bulan Tahun : " +
+          values.hariAkad +
+          ", " +
+          values.akad +
+          "%0a-Pukul : " +
+          values.pukulAkad +
+          " " +
+          values.zonaWaktuAkad +
+          "%0a-Tempat acara : " +
+          values.tempatAkad +
+          "%0a-Maps acara : " +
+          values.mapsAkad +
+          "%0a%0a9. Resepsi" +
+          dataResepsi +
+          "%0a-Hari, Tanggal Bulan Tahun : " +
+          values.hariResepsi +
+          ", " +
+          values.resepsi +
+          "%0a-Pukul : " +
+          values.pukulResepsi +
+          " " +
+          values.zonaWaktuResepsi +
+          "%0a-Tempat acara : " +
+          values.tempatResepsi +
+          "%0a-Maps acara : " +
+          values.mapsResepsi +
+          "%0a%0a10. Musik : " +
+          values.musik;
+      }
     }
+    // console.log(dataGold);
     // console.log(data);
     event.preventDefault();
     event.stopPropagation();
@@ -159,34 +250,6 @@ export default function CardForm(props) {
     }
     if (e.target.name === "paket" && e.target.value === "Gold") {
       setVisibleGold(!visible);
-      setDataGold(
-        "%0a%0aData Tambahan Paket Gold %0a%0a1. Love Story : " +
-          values.loveStory +
-          "%0a%0a2. Live Streaming : " +
-          values.live +
-          "%0a%0a3. Wedding Gift %0a%0a-Amplop Digital 1%0a-Nomor Rekening 1 : " +
-          values.nomorRek +
-          "%0a-Nama Bank 1 : " +
-          values.namaBank +
-          "%0a-Atas Nama 1 : " +
-          values.atasNama +
-          "%0a%0a-Amplop Digital 2%0-aNomor Rekening 2 : " +
-          values.nomorRek2 +
-          "%0a-Nama Bank 2 : " +
-          values.namaBank2 +
-          "%0a-Atas Nama 2 : " +
-          values.atasNama2 +
-          "%0a%0a-Kirim Hadiah%0a-Alamat : " +
-          values.alamat +
-          "%0a-Nama Penerima : " +
-          values.namaPenerima +
-          "%0a-WA Konfirmasi Amplop/Penerima : " +
-          values.waKonfirmasi +
-          "%0a%0a4. Reservasi Kehadiran via WA : " +
-          values.daftarHadir +
-          "%0a%0a5. QR Code RSVP : " +
-          values.rsvp
-      );
     } else if (
       e.target.name === "paket" &&
       (e.target.value === "Silver" || e.target.value === "Bronze")
@@ -220,7 +283,10 @@ export default function CardForm(props) {
     } else {
       setDataResepsi("%0a-Acara : " + values.namaAcaraResepsi);
     }
-
+    if (values.paket === "Gold") {
+      setDataGold(1);
+    }
+    console.log(dataGold);
     setValues({
       ...values,
       [name]: value,
@@ -1125,7 +1191,6 @@ export default function CardForm(props) {
                               name="waKonfirmasi"
                               value={values.waKonfirmasi}
                               onChange={handleInputChange}
-                              required
                               type="text"
                               placeholder="Masukan Nomor"
                             />
@@ -1215,7 +1280,7 @@ export default function CardForm(props) {
                     </Accordion>
                   </>
                 )}
-                <Button type="submit" className="Button mt-4 mb-2">
+                <Button type="submit" className="Button mt-1 mb-2">
                   <i className="bi bi-whatsapp me-2"></i>
                   Kirim
                 </Button>
