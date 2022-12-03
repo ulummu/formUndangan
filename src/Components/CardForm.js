@@ -75,6 +75,14 @@ export default function CardForm(props) {
   const [dataResepsi, setDataResepsi] = useState("");
   const [dataGold, setDataGold] = useState("");
   // useEffect(() => {}, [dataGold]);
+  const capitalFirstWord = (e) => {
+    var words = e.split(" ");
+    for (var i = 0; i < words.length; i++) {
+      words[i] = words[i].charAt(0).toUpperCase() + words[i].substr(1);
+    }
+
+    return words.join(" ");
+  };
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === true) {
@@ -97,7 +105,7 @@ export default function CardForm(props) {
           values.panggilanWanita +
           "%0a-Nama Lengkap : " +
           values.lengkapWanita +
-          "%0a-Nama Kedua Orang Tua : Putri Ke " +
+          "%0a-Nama Kedua Orang Tua : Putri " +
           values.wanitaAnakKe +
           " dari " +
           values.namaIbuWanita +
@@ -107,7 +115,7 @@ export default function CardForm(props) {
           values.panggilanPria +
           "%0a-Nama Lengkap : " +
           values.lengkapPria +
-          "%0a-Nama Kedua Orang Tua : Putra Ke " +
+          "%0a-Nama Kedua Orang Tua : Putra " +
           values.priaAnakKe +
           " dari " +
           values.namaIbuPria +
@@ -286,7 +294,9 @@ export default function CardForm(props) {
     if (values.paket === "Gold") {
       setDataGold(1);
     }
-    console.log(dataGold);
+    // if (!!values.lengkapWanita) {
+    //   capitalFirstword(values.lengkapWanita);
+    // }
     setValues({
       ...values,
       [name]: value,
@@ -442,7 +452,7 @@ export default function CardForm(props) {
                             >
                               <Form.Control
                                 name="panggilanWanita"
-                                value={capitalize(values.panggilanWanita)}
+                                value={capitalFirstWord(values.panggilanWanita)}
                                 onChange={handleInputChange}
                                 required
                                 type="text"
@@ -459,7 +469,7 @@ export default function CardForm(props) {
                             >
                               <Form.Control
                                 name="lengkapWanita"
-                                value={capitalize(values.lengkapWanita)}
+                                value={capitalFirstWord(values.lengkapWanita)}
                                 onChange={handleInputChange}
                                 required
                                 type="text"
@@ -472,17 +482,20 @@ export default function CardForm(props) {
                             </FloatingLabel>
                             <FloatingLabel
                               controlId="floatingInput"
-                              label="Anak ke/Putri ke"
-                              className="mb-3"
+                              label="Anak ..."
+                              className="mb-1"
                             >
                               <Form.Control
                                 name="wanitaAnakKe"
-                                value={capitalize(values.wanitaAnakKe)}
+                                value={capitalFirstWord(values.wanitaAnakKe)}
                                 onChange={handleInputChange}
                                 required
                                 type="text"
                                 placeholder="Masukan Anak Ke"
                               />
+                              <Form.Text muted>
+                                Contoh : ke-2 atau kedua
+                              </Form.Text>
                               <Form.Control.Feedback type="invalid">
                                 Belum Diisi
                               </Form.Control.Feedback>
@@ -494,7 +507,7 @@ export default function CardForm(props) {
                             >
                               <Form.Control
                                 name="namaBapakWanita"
-                                value={capitalize(values.namaBapakWanita)}
+                                value={capitalFirstWord(values.namaBapakWanita)}
                                 onChange={handleInputChange}
                                 type="text"
                                 required
@@ -512,7 +525,7 @@ export default function CardForm(props) {
                             >
                               <Form.Control
                                 name="namaIbuWanita"
-                                value={capitalize(values.namaIbuWanita)}
+                                value={capitalFirstWord(values.namaIbuWanita)}
                                 onChange={handleInputChange}
                                 type="text"
                                 required
@@ -537,7 +550,7 @@ export default function CardForm(props) {
                             >
                               <Form.Control
                                 name="panggilanPria"
-                                value={capitalize(values.panggilanPria)}
+                                value={capitalFirstWord(values.panggilanPria)}
                                 onChange={handleInputChange}
                                 required
                                 type="text"
@@ -554,7 +567,7 @@ export default function CardForm(props) {
                             >
                               <Form.Control
                                 name="lengkapPria"
-                                value={capitalize(values.lengkapPria)}
+                                value={capitalFirstWord(values.lengkapPria)}
                                 onChange={handleInputChange}
                                 required
                                 type="text"
@@ -566,17 +579,20 @@ export default function CardForm(props) {
                             </FloatingLabel>
                             <FloatingLabel
                               controlId="floatingInput"
-                              label="Anak ke/Putra ke"
-                              className="mb-3"
+                              label="Anak ..."
+                              className="mb-1"
                             >
                               <Form.Control
                                 name="priaAnakKe"
-                                value={capitalize(values.priaAnakKe)}
+                                value={capitalFirstWord(values.priaAnakKe)}
                                 onChange={handleInputChange}
                                 required
                                 type="text"
                                 placeholder="Masukan Anak Ke"
                               />
+                              <Form.Text muted>
+                                Contoh : ke-2 atau kedua
+                              </Form.Text>
                               <Form.Control.Feedback type="invalid">
                                 Belum Diisi
                               </Form.Control.Feedback>
@@ -588,7 +604,7 @@ export default function CardForm(props) {
                             >
                               <Form.Control
                                 name="namaBapakPria"
-                                value={capitalize(values.namaBapakPria)}
+                                value={capitalFirstWord(values.namaBapakPria)}
                                 onChange={handleInputChange}
                                 type="text"
                                 required
@@ -607,7 +623,7 @@ export default function CardForm(props) {
                               <Form.Control
                                 required
                                 name="namaIbuPria"
-                                value={capitalize(values.namaIbuPria)}
+                                value={capitalFirstWord(values.namaIbuPria)}
                                 onChange={handleInputChange}
                                 type="text"
                                 placeholder="Masukan Nama Ibu"
@@ -664,7 +680,7 @@ export default function CardForm(props) {
                                 >
                                   <Form.Control
                                     name="lainnyaAkad"
-                                    value={values.lainnyaAkad}
+                                    value={capitalFirstWord(values.lainnyaAkad)}
                                     onChange={handleInputChange}
                                     required
                                     type="text"
@@ -712,7 +728,7 @@ export default function CardForm(props) {
                                 >
                                   <Form.Control
                                     name="akad"
-                                    value={capitalize(values.akad)}
+                                    value={capitalFirstWord(values.akad)}
                                     onChange={handleInputChange}
                                     required
                                     type="text"
@@ -771,7 +787,7 @@ export default function CardForm(props) {
                             >
                               <Form.Control
                                 name="tempatAkad"
-                                value={capitalize(values.tempatAkad)}
+                                value={capitalFirstWord(values.tempatAkad)}
                                 onChange={handleInputChange}
                                 required
                                 type="text"
@@ -788,7 +804,7 @@ export default function CardForm(props) {
                             >
                               <Form.Control
                                 name="mapsAkad"
-                                value={capitalize(values.mapsAkad)}
+                                value={values.mapsAkad}
                                 onChange={handleInputChange}
                                 type="text"
                                 placeholder="Masukan Maps"
@@ -810,7 +826,9 @@ export default function CardForm(props) {
                               </Form.Label>
                               <Form.Select
                                 name="namaAcaraResepsi"
-                                value={values.namaAcaraResepsi}
+                                value={capitalFirstWord(
+                                  values.namaAcaraResepsi
+                                )}
                                 onChange={handleInputChange}
                                 required
                               >
@@ -879,7 +897,7 @@ export default function CardForm(props) {
                                 >
                                   <Form.Control
                                     name="resepsi"
-                                    value={capitalize(values.resepsi)}
+                                    value={capitalFirstWord(values.resepsi)}
                                     onChange={handleInputChange}
                                     required
                                     type="text"
@@ -939,7 +957,7 @@ export default function CardForm(props) {
                             >
                               <Form.Control
                                 name="tempatResepsi"
-                                value={capitalize(values.tempatResepsi)}
+                                value={capitalFirstWord(values.tempatResepsi)}
                                 onChange={handleInputChange}
                                 required
                                 type="text"
@@ -956,7 +974,7 @@ export default function CardForm(props) {
                             >
                               <Form.Control
                                 name="mapsResepsi"
-                                value={capitalize(values.mapsResepsi)}
+                                value={values.mapsResepsi}
                                 onChange={handleInputChange}
                                 type="text"
                                 placeholder="Masukan Maps"
@@ -1015,7 +1033,7 @@ export default function CardForm(props) {
                           >
                             <Form.Control
                               name="loveStory"
-                              value={values.loveStory}
+                              value={capitalize(values.loveStory)}
                               onChange={handleInputChange}
                               as="textarea"
                               placeholder="Ceritakan ceritamu disini"
@@ -1091,7 +1109,7 @@ export default function CardForm(props) {
                                 >
                                   <Form.Control
                                     name="atasNama"
-                                    value={values.atasNama}
+                                    value={capitalFirstWord(values.atasNama)}
                                     onChange={handleInputChange}
                                     type="text"
                                     placeholder="Atas Nama Bank"
@@ -1138,7 +1156,7 @@ export default function CardForm(props) {
                                 >
                                   <Form.Control
                                     name="atasNama2"
-                                    value={values.atasNama2}
+                                    value={capitalFirstWord(values.atasNama2)}
                                     onChange={handleInputChange}
                                     type="text"
                                     placeholder="Atas Nama Bank"
