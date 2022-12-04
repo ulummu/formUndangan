@@ -194,7 +194,7 @@ export default function CardForm(props) {
           values.panggilanWanita +
           "%0a-Nama Lengkap : " +
           values.lengkapWanita +
-          "%0a-Nama Kedua Orang Tua : Putri Ke " +
+          "%0a-Nama Kedua Orang Tua : Putri " +
           values.wanitaAnakKe +
           " dari " +
           values.namaIbuWanita +
@@ -204,7 +204,7 @@ export default function CardForm(props) {
           values.panggilanPria +
           "%0a-Nama Lengkap : " +
           values.lengkapPria +
-          "%0a-Nama Kedua Orang Tua : Putra Ke " +
+          "%0a-Nama Kedua Orang Tua : Putra " +
           values.priaAnakKe +
           " dari " +
           values.namaIbuPria +
@@ -307,7 +307,7 @@ export default function CardForm(props) {
     <Container>
       <Row>
         <Col>
-          <Card className="m-auto mt-5 mb-5 align-self-center Card">
+          <Card className="m-auto mt-5 mb-5 align-self-center Card ">
             <Card.Header as="h3" className="card-header">
               <img src={logo} alt="logo" className="logo me-2" />
               Form Data Undangan
