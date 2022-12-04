@@ -305,936 +305,911 @@ export default function CardForm(props) {
   };
 
   return (
-    <Container className="d-flex vh-100">
-      <Card className="m-auto mt-5 mb-5 align-self-center Card ">
-        <Card.Header as="h3" className="card-header">
-          <img src={logo} alt="logo" className="logo me-2" />
-          Form Data Undangan
-        </Card.Header>
-        <Card.Body>
-          <Form
-            className="form"
-            noValidate
-            validated={validated}
-            onSubmit={handleSubmit}
-          >
-            <Form.Group className="mb-2">
-              <Form.Label className="labelForm">Tema Undangan</Form.Label>
-              <Form.Select
-                name="tema"
-                value={values.tema}
-                onChange={handleInputChange}
-                required
+    <Container>
+      <Row>
+        <Col>
+          <Card className="m-auto mt-5 mb-5 align-self-center Card ">
+            <Card.Header as="h3" className="card-header">
+              <img src={logo} alt="logo" className="logo me-2" />
+              Form Data Undangan
+            </Card.Header>
+            <Card.Body>
+              <Form
+                className="form"
+                noValidate
+                validated={validated}
+                onSubmit={handleSubmit}
               >
-                <option value="" disabled hidden>
-                  Silakan Pilih Tema
-                </option>
-                <option value="Tema 01">Tema 01</option>
-                <option value="Tema AE">Tema AE</option>
-                <option value="Tema AD">Tema AD</option>
-                <option value="Tema AC">Tema AC</option>
-                <option value="Tema AA">Tema AA</option>
-                <option value="Tema P">Tema P</option>
-                <option value="Tema Q">Tema Q</option>
-                <option value="Tema W">Tema W</option>
-                <option value="Tema X">Tema X</option>
-                <option value="Tema Y">Tema Y</option>
-                <option value="Tema Z">Tema Z</option>
-                <option value="Tema Jawa">Tema Jawa</option>
-                <option value="Tema Minang">Tema Minang</option>
-                <option value="Tema Aqiqah">Tema Aqiqah</option>
-              </Form.Select>
-              <Form.Control.Feedback type="invalid">
-                Tema Belum Dipilih
-              </Form.Control.Feedback>
-            </Form.Group>
+                <Form.Group className="mb-2">
+                  <Form.Label className="labelForm">Tema Undangan</Form.Label>
+                  <Form.Select
+                    name="tema"
+                    value={values.tema}
+                    onChange={handleInputChange}
+                    required
+                  >
+                    <option value="" disabled hidden>
+                      Silakan Pilih Tema
+                    </option>
+                    <option value="Tema 01">Tema 01</option>
+                    <option value="Tema AE">Tema AE</option>
+                    <option value="Tema AD">Tema AD</option>
+                    <option value="Tema AC">Tema AC</option>
+                    <option value="Tema AA">Tema AA</option>
+                    <option value="Tema P">Tema P</option>
+                    <option value="Tema Q">Tema Q</option>
+                    <option value="Tema W">Tema W</option>
+                    <option value="Tema X">Tema X</option>
+                    <option value="Tema Y">Tema Y</option>
+                    <option value="Tema Z">Tema Z</option>
+                    <option value="Tema Jawa">Tema Jawa</option>
+                    <option value="Tema Minang">Tema Minang</option>
+                    <option value="Tema Aqiqah">Tema Aqiqah</option>
+                  </Form.Select>
+                  <Form.Control.Feedback type="invalid">
+                    Tema Belum Dipilih
+                  </Form.Control.Feedback>
+                </Form.Group>
 
-            <Form.Group className="mb-2">
-              <Form.Label className="labelForm">Bahasa Undangan</Form.Label>
-              <Form.Select
-                name="bahasa"
-                value={values.bahasa}
-                onChange={handleInputChange}
-                required
-              >
-                <option value="" disabled hidden>
-                  Silakan Pilih Bahasa
-                </option>
-                <option value="Indonesia">Indonesia</option>
-                <option value="Inggris">Inggris</option>
-              </Form.Select>
-              <Form.Control.Feedback type="invalid">
-                Bahasa Belum Dipilih
-              </Form.Control.Feedback>
-            </Form.Group>
+                <Form.Group className="mb-2">
+                  <Form.Label className="labelForm">Bahasa Undangan</Form.Label>
+                  <Form.Select
+                    name="bahasa"
+                    value={values.bahasa}
+                    onChange={handleInputChange}
+                    required
+                  >
+                    <option value="" disabled hidden>
+                      Silakan Pilih Bahasa
+                    </option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Inggris">Inggris</option>
+                  </Form.Select>
+                  <Form.Control.Feedback type="invalid">
+                    Bahasa Belum Dipilih
+                  </Form.Control.Feedback>
+                </Form.Group>
 
-            <Form.Group className="mb-2">
-              <Form.Label className="labelForm">Paket Undangan</Form.Label>
-              <Form.Select
-                name="paket"
-                value={values.paket}
-                onChange={handleInputChange}
-                required
-              >
-                <option value="" disabled hidden>
-                  Silakan Pilih Paket
-                </option>
-                <option value="Gold">Gold</option>
-                <option value="Silver">Silver</option>
-                <option value="Bronze">Bronze</option>
-              </Form.Select>
-              <Form.Control.Feedback type="invalid">
-                Paket Belum Dipilih
-              </Form.Control.Feedback>
-            </Form.Group>
+                <Form.Group className="mb-2">
+                  <Form.Label className="labelForm">Paket Undangan</Form.Label>
+                  <Form.Select
+                    name="paket"
+                    value={values.paket}
+                    onChange={handleInputChange}
+                    required
+                  >
+                    <option value="" disabled hidden>
+                      Silakan Pilih Paket
+                    </option>
+                    <option value="Gold">Gold</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Bronze">Bronze</option>
+                  </Form.Select>
+                  <Form.Control.Feedback type="invalid">
+                    Paket Belum Dipilih
+                  </Form.Control.Feedback>
+                </Form.Group>
 
-            <Form.Group className="mb-2">
-              <Form.Label className="labelForm">Menggunakan Foto</Form.Label>
-              <Form.Select
-                name="foto"
-                value={values.foto}
-                onChange={handleInputChange}
-                required
-              >
-                <option value="" disabled hidden>
-                  Pilih
-                </option>
-                <option value="Dengan Foto">Dengan Foto</option>
-                <option value="Tanpa Foto">Tanpa Foto</option>
-                <option value="Animasi">Animasi</option>
-              </Form.Select>
-              <Form.Control.Feedback type="invalid">
-                Foto Belum Dipilih
-              </Form.Control.Feedback>
-            </Form.Group>
+                <Form.Group className="mb-2">
+                  <Form.Label className="labelForm">
+                    Menggunakan Foto
+                  </Form.Label>
+                  <Form.Select
+                    name="foto"
+                    value={values.foto}
+                    onChange={handleInputChange}
+                    required
+                  >
+                    <option value="" disabled hidden>
+                      Pilih
+                    </option>
+                    <option value="Dengan Foto">Dengan Foto</option>
+                    <option value="Tanpa Foto">Tanpa Foto</option>
+                    <option value="Animasi">Animasi</option>
+                  </Form.Select>
+                  <Form.Control.Feedback type="invalid">
+                    Foto Belum Dipilih
+                  </Form.Control.Feedback>
+                </Form.Group>
 
-            <Form.Group className="mb-2">
-              <Form.Label className="labelForm">
-                Nama yang didahulukan
-              </Form.Label>
-              <Form.Select
-                name="namaAwal"
-                value={values.namaAwal}
-                onChange={handleInputChange}
-                required
-              >
-                <option value="" disabled hidden>
-                  Pilih
-                </option>
-                <option value="Wanita">Wanita</option>
-                <option value="Pria">Pria</option>
-              </Form.Select>
-              <Form.Control.Feedback type="invalid">
-                Nama Belum Dipilih
-              </Form.Control.Feedback>
-            </Form.Group>
+                <Form.Group className="mb-2">
+                  <Form.Label className="labelForm">
+                    Nama yang didahulukan
+                  </Form.Label>
+                  <Form.Select
+                    name="namaAwal"
+                    value={values.namaAwal}
+                    onChange={handleInputChange}
+                    required
+                  >
+                    <option value="" disabled hidden>
+                      Pilih
+                    </option>
+                    <option value="Wanita">Wanita</option>
+                    <option value="Pria">Pria</option>
+                  </Form.Select>
+                  <Form.Control.Feedback type="invalid">
+                    Nama Belum Dipilih
+                  </Form.Control.Feedback>
+                </Form.Group>
 
-            <Accordion flush>
-              <Accordion.Item eventKey="0">
-                <Accordion.Header>
-                  <i className="bi bi-person-heart me-2"></i>
-                  <div className="labelForm">Data Mempelai</div>
-                </Accordion.Header>
-                <Accordion.Body>
-                  <Accordion flush>
-                    <Accordion.Item eventKey="0">
-                      <Accordion.Header>
-                        <div className="labelForm">Mempelai Wanita</div>
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        <FloatingLabel
-                          controlId="floatingInput"
-                          label="Nama Panggilan"
-                          className="mb-3"
-                        >
-                          <Form.Control
-                            name="panggilanWanita"
-                            value={capitalFirstWord(values.panggilanWanita)}
-                            onChange={handleInputChange}
-                            required
-                            type="text"
-                            placeholder="Masukan Nama Panggilan"
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            Nama Belum Diisi
-                          </Form.Control.Feedback>
-                        </FloatingLabel>
-                        <FloatingLabel
-                          controlId="floatingInput"
-                          label="Nama Lengkap"
-                          className="mb-3"
-                        >
-                          <Form.Control
-                            name="lengkapWanita"
-                            value={capitalFirstWord(values.lengkapWanita)}
-                            onChange={handleInputChange}
-                            required
-                            type="text"
-                            minLength={4}
-                            placeholder="Masukan Nama Lengkap"
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            Nama Lengkap Belum Diisi
-                          </Form.Control.Feedback>
-                        </FloatingLabel>
-                        <FloatingLabel
-                          controlId="floatingInput"
-                          label="Anak ..."
-                          className="mb-1"
-                        >
-                          <Form.Control
-                            name="wanitaAnakKe"
-                            value={capitalFirstWord(values.wanitaAnakKe)}
-                            onChange={handleInputChange}
-                            required
-                            type="text"
-                            placeholder="Masukan Anak Ke"
-                          />
-                          <Form.Text muted>Contoh : ke-2 atau kedua</Form.Text>
-                          <Form.Control.Feedback type="invalid">
-                            Belum Diisi
-                          </Form.Control.Feedback>
-                        </FloatingLabel>
-                        <FloatingLabel
-                          controlId="floatingInput"
-                          label="Nama Bapak"
-                          className="mb-3"
-                        >
-                          <Form.Control
-                            name="namaBapakWanita"
-                            value={capitalFirstWord(values.namaBapakWanita)}
-                            onChange={handleInputChange}
-                            type="text"
-                            required
-                            placeholder="Nama Bapak"
-                            // defaultValue="Putri Dari "
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            Nama Bapak Belum Diisi
-                          </Form.Control.Feedback>
-                        </FloatingLabel>
-                        <FloatingLabel
-                          controlId="floatingInput"
-                          label="Nama Ibu"
-                          className="mb-3"
-                        >
-                          <Form.Control
-                            name="namaIbuWanita"
-                            value={capitalFirstWord(values.namaIbuWanita)}
-                            onChange={handleInputChange}
-                            type="text"
-                            required
-                            placeholder="Nama Ibu"
-                            // defaultValue="Putri Dari "
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            Nama Ibu Belum Diisi
-                          </Form.Control.Feedback>
-                        </FloatingLabel>
-                      </Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="1">
-                      <Accordion.Header>
-                        <div className="labelForm">Mempelai Pria</div>
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        <FloatingLabel
-                          controlId="floatingInput"
-                          label="Nama Panggilan"
-                          className="mb-3"
-                        >
-                          <Form.Control
-                            name="panggilanPria"
-                            value={capitalFirstWord(values.panggilanPria)}
-                            onChange={handleInputChange}
-                            required
-                            type="text"
-                            placeholder="Masukan Nama Panggilan"
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            Nama Belum Diisi
-                          </Form.Control.Feedback>
-                        </FloatingLabel>
-                        <FloatingLabel
-                          controlId="floatingInput"
-                          label="Nama Lengkap"
-                          className="mb-3"
-                        >
-                          <Form.Control
-                            name="lengkapPria"
-                            value={capitalFirstWord(values.lengkapPria)}
-                            onChange={handleInputChange}
-                            required
-                            type="text"
-                            placeholder="Masukan Nama Lengkap"
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            Nama Lengkap Belum Diisi
-                          </Form.Control.Feedback>
-                        </FloatingLabel>
-                        <FloatingLabel
-                          controlId="floatingInput"
-                          label="Anak ..."
-                          className="mb-1"
-                        >
-                          <Form.Control
-                            name="priaAnakKe"
-                            value={capitalFirstWord(values.priaAnakKe)}
-                            onChange={handleInputChange}
-                            required
-                            type="text"
-                            placeholder="Masukan Anak Ke"
-                          />
-                          <Form.Text muted>Contoh : ke-2 atau kedua</Form.Text>
-                          <Form.Control.Feedback type="invalid">
-                            Belum Diisi
-                          </Form.Control.Feedback>
-                        </FloatingLabel>
-                        <FloatingLabel
-                          controlId="floatingInput"
-                          label="Nama Bapak"
-                          className="mb-3"
-                        >
-                          <Form.Control
-                            name="namaBapakPria"
-                            value={capitalFirstWord(values.namaBapakPria)}
-                            onChange={handleInputChange}
-                            type="text"
-                            required
-                            placeholder="Nama Bapak"
-                            // defaultValue="Putri Dari "
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            Nama Bapak Belum Diisi
-                          </Form.Control.Feedback>
-                        </FloatingLabel>
-                        <FloatingLabel
-                          controlId="floatingInput"
-                          label="Nama Ibu"
-                          className="mb-3"
-                        >
-                          <Form.Control
-                            required
-                            name="namaIbuPria"
-                            value={capitalFirstWord(values.namaIbuPria)}
-                            onChange={handleInputChange}
-                            type="text"
-                            placeholder="Masukan Nama Ibu"
-                            // defaultValue="Putra Dari "
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            Nama Ibu Belum Diisi
-                          </Form.Control.Feedback>
-                        </FloatingLabel>
-                      </Accordion.Body>
-                    </Accordion.Item>
-                  </Accordion>
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
-
-            <Accordion flush>
-              <Accordion.Item eventKey="0">
-                <Accordion.Header>
-                  <i className="bi bi-calendar2-check me-2"></i>
-                  <div className="labelForm">Rincian Acara</div>
-                </Accordion.Header>
-                <Accordion.Body>
-                  <Accordion flush>
-                    <Accordion.Item eventKey="0">
-                      <Accordion.Header>
-                        <div className="labelForm">
-                          Akad Nikah, Pemberkatan, dll
-                        </div>
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        <Form.Group className="mb-3">
-                          <Form.Label className="labelForm">Acara</Form.Label>
-                          <Form.Select
-                            name="namaAcaraAkad"
-                            value={values.namaAcaraAkad}
-                            onChange={handleInputChange}
-                            required
-                          >
-                            <option value="" disabled hidden>
-                              Silakan Pilih
-                            </option>
-                            <option value="Akad Nikah">Akad Nikah</option>
-                            <option value="Pemberkatan">Pemberkatan</option>
-                            <option value="Lainnya">Lainnya</option>
-                          </Form.Select>
-                          {visibleAkad && (
+                <Accordion flush>
+                  <Accordion.Item eventKey="0">
+                    <Accordion.Header>
+                      <i className="bi bi-person-heart me-2"></i>
+                      <div className="labelForm">Data Mempelai</div>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      <Accordion flush>
+                        <Accordion.Item eventKey="0">
+                          <Accordion.Header>
+                            <div className="labelForm">Mempelai Wanita</div>
+                          </Accordion.Header>
+                          <Accordion.Body>
                             <FloatingLabel
                               controlId="floatingInput"
-                              label="Nama Acara "
-                              className="formTambah mt-3"
+                              label="Nama Panggilan"
+                              className="mb-3"
                             >
                               <Form.Control
-                                name="lainnyaAkad"
-                                value={capitalFirstWord(values.lainnyaAkad)}
+                                name="panggilanWanita"
+                                value={capitalFirstWord(values.panggilanWanita)}
                                 onChange={handleInputChange}
                                 required
                                 type="text"
-                                placeholder="Masukan Nama Acara"
+                                placeholder="Masukan Nama Panggilan"
                               />
                               <Form.Control.Feedback type="invalid">
-                                Nama Acara Belum Diisi
+                                Nama Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
-                          )}
-                          <Form.Control.Feedback type="invalid">
-                            Acara Belum Dipilih
-                          </Form.Control.Feedback>
-                        </Form.Group>
-                        <Row>
-                          <Col sm={3}>
-                            <Form.Select
-                              required
-                              className="hari"
-                              name="hariAkad"
-                              value={values.hariAkad}
-                              onChange={handleInputChange}
-                              type="text"
-                            >
-                              <option value="" disabled hidden>
-                                Hari
-                              </option>
-                              <option value="Senin">Senin</option>
-                              <option value="Selasa">Selasa</option>
-                              <option value="Rabu">Rabu</option>
-                              <option value="Kamis">Kamis</option>
-                              <option value="Jumat">Jumat</option>
-                              <option value="Sabtu">Sabtu</option>
-                              <option value="Minggu">Minggu</option>
-                            </Form.Select>
-                            <Form.Control.Feedback type="invalid">
-                              Hari Belum Dipilih
-                            </Form.Control.Feedback>
-                          </Col>
-                          <Col sm={9}>
                             <FloatingLabel
                               controlId="floatingInput"
-                              label="Tanggal Bulan Tahun"
-                              className="formTanggal mb-3"
+                              label="Nama Lengkap"
+                              className="mb-3"
                             >
                               <Form.Control
-                                name="akad"
-                                value={capitalFirstWord(values.akad)}
+                                name="lengkapWanita"
+                                value={capitalFirstWord(values.lengkapWanita)}
                                 onChange={handleInputChange}
                                 required
                                 type="text"
-                                placeholder="Masukan Hari, Tanggal Bulan Tahun"
+                                minLength={4}
+                                placeholder="Masukan Nama Lengkap"
                               />
                               <Form.Control.Feedback type="invalid">
-                                Tanggal Belum Diisi
+                                Nama Lengkap Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col>
                             <FloatingLabel
                               controlId="floatingInput"
-                              label="Pukul"
+                              label="Anak ..."
+                              className="mb-1"
                             >
                               <Form.Control
-                                required
-                                name="pukulAkad"
-                                value={values.pukulAkad}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="pukul"
-                              />
-                              <Form.Text muted>Format : .. s/d ..</Form.Text>
-                              <Form.Control.Feedback type="invalid">
-                                waktu Belum Diisi
-                              </Form.Control.Feedback>
-                            </FloatingLabel>
-                          </Col>
-                          <Col>
-                            <Form.Select
-                              required
-                              className="zona"
-                              name="zonaWaktuAkad"
-                              value={values.zonaWaktuAkad}
-                              onChange={handleInputChange}
-                              type="text"
-                            >
-                              <option value="" disabled hidden>
-                                Zonasi
-                              </option>
-                              <option value="WIB">WIB</option>
-                              <option value="WITA">WITA</option>
-                              <option value="WIT">WIT</option>
-                            </Form.Select>
-                          </Col>
-                        </Row>
-                        <FloatingLabel
-                          controlId="floatingInput"
-                          label="Tempat Acara"
-                          className="mb-3 mt-3"
-                        >
-                          <Form.Control
-                            name="tempatAkad"
-                            value={capitalFirstWord(values.tempatAkad)}
-                            onChange={handleInputChange}
-                            required
-                            type="text"
-                            placeholder="Masukan Tempat Acara"
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            Tempat Belum Diisi
-                          </Form.Control.Feedback>
-                        </FloatingLabel>
-                        <FloatingLabel
-                          controlId="floatingInput"
-                          label="Maps Acara"
-                          className="mb-3"
-                        >
-                          <Form.Control
-                            name="mapsAkad"
-                            value={values.mapsAkad}
-                            onChange={handleInputChange}
-                            type="text"
-                            placeholder="Masukan Maps"
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            Maps Belum Diisi
-                          </Form.Control.Feedback>
-                        </FloatingLabel>
-                      </Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="1">
-                      <Accordion.Header>
-                        <div className="labelForm">Resepsi</div>
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        <Form.Group className="mb-3">
-                          <Form.Label className="labelForm">Acara</Form.Label>
-                          <Form.Select
-                            name="namaAcaraResepsi"
-                            value={capitalFirstWord(values.namaAcaraResepsi)}
-                            onChange={handleInputChange}
-                            required
-                          >
-                            <option value="" disabled hidden>
-                              Silakan Pilih
-                            </option>
-                            <option value="Resepsi">Resepsi</option>
-                            <option value="Walimatul Ursy">
-                              Walimatul Ursy
-                            </option>
-                            <option value="Lainnya">Lainnya</option>
-                          </Form.Select>
-                          {visibleResepsi && (
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Nama Acara "
-                              className="formTambah mt-3"
-                            >
-                              <Form.Control
-                                name="lainnyaResepsi"
-                                value={values.lainnyaResepsi}
+                                name="wanitaAnakKe"
+                                value={capitalFirstWord(values.wanitaAnakKe)}
                                 onChange={handleInputChange}
                                 required
                                 type="text"
-                                placeholder="Masukan Nama Acara"
+                                placeholder="Masukan Anak Ke"
                               />
+                              <Form.Text muted>
+                                Contoh : ke-2 atau kedua
+                              </Form.Text>
                               <Form.Control.Feedback type="invalid">
-                                Nama Acara Belum Diisi
+                                Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
-                          )}
-                          <Form.Control.Feedback type="invalid">
-                            Acara Belum Dipilih
-                          </Form.Control.Feedback>
-                        </Form.Group>
-                        <Row>
-                          <Col sm={3}>
-                            <Form.Select
-                              required
-                              className="hari"
-                              name="hariResepsi"
-                              value={values.hariResepsi}
-                              onChange={handleInputChange}
-                              type="text"
-                            >
-                              <option value="" disabled hidden>
-                                Hari
-                              </option>
-                              <option value="Senin">Senin</option>
-                              <option value="Selasa">Selasa</option>
-                              <option value="Rabu">Rabu</option>
-                              <option value="Kamis">Kamis</option>
-                              <option value="Jumat">Jumat</option>
-                              <option value="Sabtu">Sabtu</option>
-                              <option value="Minggu">Minggu</option>
-                            </Form.Select>
-                            <Form.Control.Feedback type="invalid">
-                              Hari Belum Dipilih
-                            </Form.Control.Feedback>
-                          </Col>
-                          <Col sm={9}>
                             <FloatingLabel
                               controlId="floatingInput"
-                              label="Tanggal Bulan Tahun"
-                              className="formTanggal mb-3"
+                              label="Nama Bapak"
+                              className="mb-3"
                             >
                               <Form.Control
-                                name="resepsi"
-                                value={capitalFirstWord(values.resepsi)}
+                                name="namaBapakWanita"
+                                value={capitalFirstWord(values.namaBapakWanita)}
+                                onChange={handleInputChange}
+                                type="text"
+                                required
+                                placeholder="Nama Bapak"
+                                // defaultValue="Putri Dari "
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Nama Bapak Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Nama Ibu"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="namaIbuWanita"
+                                value={capitalFirstWord(values.namaIbuWanita)}
+                                onChange={handleInputChange}
+                                type="text"
+                                required
+                                placeholder="Nama Ibu"
+                                // defaultValue="Putri Dari "
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Nama Ibu Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="1">
+                          <Accordion.Header>
+                            <div className="labelForm">Mempelai Pria</div>
+                          </Accordion.Header>
+                          <Accordion.Body>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Nama Panggilan"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="panggilanPria"
+                                value={capitalFirstWord(values.panggilanPria)}
                                 onChange={handleInputChange}
                                 required
                                 type="text"
-                                placeholder="Masukan Hari, Tanggal Bulan Tahun"
+                                placeholder="Masukan Nama Panggilan"
                               />
                               <Form.Control.Feedback type="invalid">
-                                Tanggal Belum Diisi
+                                Nama Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col>
                             <FloatingLabel
                               controlId="floatingInput"
-                              label="Pukul"
+                              label="Nama Lengkap"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="lengkapPria"
+                                value={capitalFirstWord(values.lengkapPria)}
+                                onChange={handleInputChange}
+                                required
+                                type="text"
+                                placeholder="Masukan Nama Lengkap"
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Nama Lengkap Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Anak ..."
+                              className="mb-1"
+                            >
+                              <Form.Control
+                                name="priaAnakKe"
+                                value={capitalFirstWord(values.priaAnakKe)}
+                                onChange={handleInputChange}
+                                required
+                                type="text"
+                                placeholder="Masukan Anak Ke"
+                              />
+                              <Form.Text muted>
+                                Contoh : ke-2 atau kedua
+                              </Form.Text>
+                              <Form.Control.Feedback type="invalid">
+                                Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Nama Bapak"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="namaBapakPria"
+                                value={capitalFirstWord(values.namaBapakPria)}
+                                onChange={handleInputChange}
+                                type="text"
+                                required
+                                placeholder="Nama Bapak"
+                                // defaultValue="Putri Dari "
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Nama Bapak Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Nama Ibu"
                               className="mb-3"
                             >
                               <Form.Control
                                 required
-                                name="pukulResepsi"
-                                value={values.pukulResepsi}
+                                name="namaIbuPria"
+                                value={capitalFirstWord(values.namaIbuPria)}
                                 onChange={handleInputChange}
                                 type="text"
-                                placeholder="pukul"
+                                placeholder="Masukan Nama Ibu"
+                                // defaultValue="Putra Dari "
                               />
-                              <Form.Text muted>Format : .. s/d ..</Form.Text>
                               <Form.Control.Feedback type="invalid">
-                                waktu Belum Diisi
+                                Nama Ibu Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
-                          </Col>
-                          <Col>
-                            <Form.Select
-                              required
-                              className="zona"
-                              name="zonaWaktuResepsi"
-                              value={values.zonaWaktuResepsi}
-                              onChange={handleInputChange}
-                              type="text"
-                            >
-                              <option value="" disabled hidden>
-                                Zonasi
-                              </option>
-                              <option value="WIB">WIB</option>
-                              <option value="WITA">WITA</option>
-                              <option value="WIT">WIT</option>
-                            </Form.Select>
-                          </Col>
-                        </Row>
-                        <FloatingLabel
-                          controlId="floatingInput"
-                          label="Tempat Acara"
-                          className="mb-3"
-                        >
-                          <Form.Control
-                            name="tempatResepsi"
-                            value={capitalFirstWord(values.tempatResepsi)}
-                            onChange={handleInputChange}
-                            required
-                            type="text"
-                            placeholder="Masukan Tempat Acara"
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            Tempat Belum Diisi
-                          </Form.Control.Feedback>
-                        </FloatingLabel>
-                        <FloatingLabel
-                          controlId="floatingInput"
-                          label="Maps Acara"
-                          className="mb-3"
-                        >
-                          <Form.Control
-                            name="mapsResepsi"
-                            value={values.mapsResepsi}
-                            onChange={handleInputChange}
-                            type="text"
-                            placeholder="Masukan Maps"
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            Maps Belum Diisi
-                          </Form.Control.Feedback>
-                        </FloatingLabel>
-                      </Accordion.Body>
-                    </Accordion.Item>
-                  </Accordion>
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
-
-            <Accordion flush>
-              <Accordion.Item eventKey="0">
-                <Accordion.Header>
-                  <i className="bi bi-music-note-beamed me-2"></i>
-                  <div className="labelForm">Musik</div>
-                </Accordion.Header>
-                <Accordion.Body>
-                  <Form.Group className="mb-2">
-                    <Form.Label className="labelForm">
-                      Backsound Undangan
-                    </Form.Label>
-                    <Form.Control
-                      required
-                      name="musik"
-                      value={values.musik}
-                      onChange={handleInputChange}
-                      type="text"
-                      placeholder="Masukan Link dan detik lagu dimulai"
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      Musik Belum Diisi
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
-            {visibleGold && (
-              <>
-                <label className="mt-1">Data Tambahan Khusus Paket Gold</label>
-                <Accordion flush>
-                  <Accordion.Item eventKey="0">
-                    <Accordion.Header>
-                      <i className="bi bi-chat-heart me-2"></i>Love Story
-                    </Accordion.Header>
-                    <Accordion.Body>
-                      <FloatingLabel
-                        controlId="floatingTextarea2"
-                        label="Ceritakan ceritamu disini"
-                      >
-                        <Form.Control
-                          name="loveStory"
-                          value={capitalize(values.loveStory)}
-                          onChange={handleInputChange}
-                          as="textarea"
-                          placeholder="Ceritakan ceritamu disini"
-                          style={{ height: "100px" }}
-                        />
-                      </FloatingLabel>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                      </Accordion>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
+
                 <Accordion flush>
                   <Accordion.Item eventKey="0">
                     <Accordion.Header>
-                      <i className="bi bi-youtube me-2"></i>Live Streaming
+                      <i className="bi bi-calendar2-check me-2"></i>
+                      <div className="labelForm">Rincian Acara</div>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      <Accordion flush>
+                        <Accordion.Item eventKey="0">
+                          <Accordion.Header>
+                            <div className="labelForm">
+                              Akad Nikah, Pemberkatan, dll
+                            </div>
+                          </Accordion.Header>
+                          <Accordion.Body>
+                            <Form.Group className="mb-3">
+                              <Form.Label className="labelForm">
+                                Acara
+                              </Form.Label>
+                              <Form.Select
+                                name="namaAcaraAkad"
+                                value={values.namaAcaraAkad}
+                                onChange={handleInputChange}
+                                required
+                              >
+                                <option value="" disabled hidden>
+                                  Silakan Pilih
+                                </option>
+                                <option value="Akad Nikah">Akad Nikah</option>
+                                <option value="Pemberkatan">Pemberkatan</option>
+                                <option value="Lainnya">Lainnya</option>
+                              </Form.Select>
+                              {visibleAkad && (
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Nama Acara "
+                                  className="formTambah mt-3"
+                                >
+                                  <Form.Control
+                                    name="lainnyaAkad"
+                                    value={capitalFirstWord(values.lainnyaAkad)}
+                                    onChange={handleInputChange}
+                                    required
+                                    type="text"
+                                    placeholder="Masukan Nama Acara"
+                                  />
+                                  <Form.Control.Feedback type="invalid">
+                                    Nama Acara Belum Diisi
+                                  </Form.Control.Feedback>
+                                </FloatingLabel>
+                              )}
+                              <Form.Control.Feedback type="invalid">
+                                Acara Belum Dipilih
+                              </Form.Control.Feedback>
+                            </Form.Group>
+                            <Row>
+                              <Col sm={3}>
+                                <Form.Select
+                                  required
+                                  className="hari"
+                                  name="hariAkad"
+                                  value={values.hariAkad}
+                                  onChange={handleInputChange}
+                                  type="text"
+                                >
+                                  <option value="" disabled hidden>
+                                    Hari
+                                  </option>
+                                  <option value="Senin">Senin</option>
+                                  <option value="Selasa">Selasa</option>
+                                  <option value="Rabu">Rabu</option>
+                                  <option value="Kamis">Kamis</option>
+                                  <option value="Jumat">Jumat</option>
+                                  <option value="Sabtu">Sabtu</option>
+                                  <option value="Minggu">Minggu</option>
+                                </Form.Select>
+                                <Form.Control.Feedback type="invalid">
+                                  Hari Belum Dipilih
+                                </Form.Control.Feedback>
+                              </Col>
+                              <Col sm={9}>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Tanggal Bulan Tahun"
+                                  className="formTanggal mb-3"
+                                >
+                                  <Form.Control
+                                    name="akad"
+                                    value={capitalFirstWord(values.akad)}
+                                    onChange={handleInputChange}
+                                    required
+                                    type="text"
+                                    placeholder="Masukan Hari, Tanggal Bulan Tahun"
+                                  />
+                                  <Form.Control.Feedback type="invalid">
+                                    Tanggal Belum Diisi
+                                  </Form.Control.Feedback>
+                                </FloatingLabel>
+                              </Col>
+                            </Row>
+                            <Row>
+                              <Col>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Pukul"
+                                >
+                                  <Form.Control
+                                    required
+                                    name="pukulAkad"
+                                    value={values.pukulAkad}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="pukul"
+                                  />
+                                  <Form.Text muted>
+                                    Format : .. s/d ..
+                                  </Form.Text>
+                                  <Form.Control.Feedback type="invalid">
+                                    waktu Belum Diisi
+                                  </Form.Control.Feedback>
+                                </FloatingLabel>
+                              </Col>
+                              <Col>
+                                <Form.Select
+                                  required
+                                  className="zona"
+                                  name="zonaWaktuAkad"
+                                  value={values.zonaWaktuAkad}
+                                  onChange={handleInputChange}
+                                  type="text"
+                                >
+                                  <option value="" disabled hidden>
+                                    Zonasi
+                                  </option>
+                                  <option value="WIB">WIB</option>
+                                  <option value="WITA">WITA</option>
+                                  <option value="WIT">WIT</option>
+                                </Form.Select>
+                              </Col>
+                            </Row>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Tempat Acara"
+                              className="mb-3 mt-3"
+                            >
+                              <Form.Control
+                                name="tempatAkad"
+                                value={capitalFirstWord(values.tempatAkad)}
+                                onChange={handleInputChange}
+                                required
+                                type="text"
+                                placeholder="Masukan Tempat Acara"
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Tempat Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Maps Acara"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="mapsAkad"
+                                value={values.mapsAkad}
+                                onChange={handleInputChange}
+                                type="text"
+                                placeholder="Masukan Maps"
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Maps Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="1">
+                          <Accordion.Header>
+                            <div className="labelForm">Resepsi</div>
+                          </Accordion.Header>
+                          <Accordion.Body>
+                            <Form.Group className="mb-3">
+                              <Form.Label className="labelForm">
+                                Acara
+                              </Form.Label>
+                              <Form.Select
+                                name="namaAcaraResepsi"
+                                value={capitalFirstWord(
+                                  values.namaAcaraResepsi
+                                )}
+                                onChange={handleInputChange}
+                                required
+                              >
+                                <option value="" disabled hidden>
+                                  Silakan Pilih
+                                </option>
+                                <option value="Resepsi">Resepsi</option>
+                                <option value="Walimatul Ursy">
+                                  Walimatul Ursy
+                                </option>
+                                <option value="Lainnya">Lainnya</option>
+                              </Form.Select>
+                              {visibleResepsi && (
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Nama Acara "
+                                  className="formTambah mt-3"
+                                >
+                                  <Form.Control
+                                    name="lainnyaResepsi"
+                                    value={values.lainnyaResepsi}
+                                    onChange={handleInputChange}
+                                    required
+                                    type="text"
+                                    placeholder="Masukan Nama Acara"
+                                  />
+                                  <Form.Control.Feedback type="invalid">
+                                    Nama Acara Belum Diisi
+                                  </Form.Control.Feedback>
+                                </FloatingLabel>
+                              )}
+                              <Form.Control.Feedback type="invalid">
+                                Acara Belum Dipilih
+                              </Form.Control.Feedback>
+                            </Form.Group>
+                            <Row>
+                              <Col sm={3}>
+                                <Form.Select
+                                  required
+                                  className="hari"
+                                  name="hariResepsi"
+                                  value={values.hariResepsi}
+                                  onChange={handleInputChange}
+                                  type="text"
+                                >
+                                  <option value="" disabled hidden>
+                                    Hari
+                                  </option>
+                                  <option value="Senin">Senin</option>
+                                  <option value="Selasa">Selasa</option>
+                                  <option value="Rabu">Rabu</option>
+                                  <option value="Kamis">Kamis</option>
+                                  <option value="Jumat">Jumat</option>
+                                  <option value="Sabtu">Sabtu</option>
+                                  <option value="Minggu">Minggu</option>
+                                </Form.Select>
+                                <Form.Control.Feedback type="invalid">
+                                  Hari Belum Dipilih
+                                </Form.Control.Feedback>
+                              </Col>
+                              <Col sm={9}>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Tanggal Bulan Tahun"
+                                  className="formTanggal mb-3"
+                                >
+                                  <Form.Control
+                                    name="resepsi"
+                                    value={capitalFirstWord(values.resepsi)}
+                                    onChange={handleInputChange}
+                                    required
+                                    type="text"
+                                    placeholder="Masukan Hari, Tanggal Bulan Tahun"
+                                  />
+                                  <Form.Control.Feedback type="invalid">
+                                    Tanggal Belum Diisi
+                                  </Form.Control.Feedback>
+                                </FloatingLabel>
+                              </Col>
+                            </Row>
+                            <Row>
+                              <Col>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Pukul"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    required
+                                    name="pukulResepsi"
+                                    value={values.pukulResepsi}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="pukul"
+                                  />
+                                  <Form.Text muted>
+                                    Format : .. s/d ..
+                                  </Form.Text>
+                                  <Form.Control.Feedback type="invalid">
+                                    waktu Belum Diisi
+                                  </Form.Control.Feedback>
+                                </FloatingLabel>
+                              </Col>
+                              <Col>
+                                <Form.Select
+                                  required
+                                  className="zona"
+                                  name="zonaWaktuResepsi"
+                                  value={values.zonaWaktuResepsi}
+                                  onChange={handleInputChange}
+                                  type="text"
+                                >
+                                  <option value="" disabled hidden>
+                                    Zonasi
+                                  </option>
+                                  <option value="WIB">WIB</option>
+                                  <option value="WITA">WITA</option>
+                                  <option value="WIT">WIT</option>
+                                </Form.Select>
+                              </Col>
+                            </Row>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Tempat Acara"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="tempatResepsi"
+                                value={capitalFirstWord(values.tempatResepsi)}
+                                onChange={handleInputChange}
+                                required
+                                type="text"
+                                placeholder="Masukan Tempat Acara"
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Tempat Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Maps Acara"
+                              className="mb-3"
+                            >
+                              <Form.Control
+                                name="mapsResepsi"
+                                value={values.mapsResepsi}
+                                onChange={handleInputChange}
+                                type="text"
+                                placeholder="Masukan Maps"
+                              />
+                              <Form.Control.Feedback type="invalid">
+                                Maps Belum Diisi
+                              </Form.Control.Feedback>
+                            </FloatingLabel>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                      </Accordion>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
+
+                <Accordion flush>
+                  <Accordion.Item eventKey="0">
+                    <Accordion.Header>
+                      <i className="bi bi-music-note-beamed me-2"></i>
+                      <div className="labelForm">Musik</div>
                     </Accordion.Header>
                     <Accordion.Body>
                       <Form.Group className="mb-2">
-                        <Form.Label>Akun Media Sosial</Form.Label>
+                        <Form.Label className="labelForm">
+                          Backsound Undangan
+                        </Form.Label>
                         <Form.Control
-                          name="live"
-                          value={values.live}
+                          required
+                          name="musik"
+                          value={values.musik}
                           onChange={handleInputChange}
                           type="text"
-                          placeholder="Masukan Link Media Sosial"
+                          placeholder="Masukan Link dan detik lagu dimulai"
                         />
+                        <Form.Control.Feedback type="invalid">
+                          Musik Belum Diisi
+                        </Form.Control.Feedback>
                       </Form.Group>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
-                <Accordion flush>
-                  <Accordion.Item eventKey="0">
-                    <Accordion.Header>
-                      <i className="bi bi bi-box2 me-2"></i>
-                      <div>Wedding Gift</div>
-                    </Accordion.Header>
-                    <Accordion.Body>
-                      <Accordion flush>
-                        <Accordion.Item eventKey="0">
-                          <Accordion.Header>
-                            <i className="bi bi-envelope me-2"></i>Amplop
-                            Digital 1
-                          </Accordion.Header>
-                          <Accordion.Body>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Nomor Rekening"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="nomorRek"
-                                value={values.nomorRek}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Nomor Rekening"
-                              />
-                            </FloatingLabel>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Nama Bank"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="namaBank"
-                                value={values.namaBank}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Nama Bank"
-                              />
-                            </FloatingLabel>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Atas Nama"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="atasNama"
-                                value={capitalFirstWord(values.atasNama)}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Atas Nama Bank"
-                              />
-                            </FloatingLabel>
-                          </Accordion.Body>
-                        </Accordion.Item>
-                        <Accordion.Item eventKey="0">
-                          <Accordion.Header>
-                            <i className="bi bi-envelope me-2"></i>Amplop
-                            Digital 2
-                          </Accordion.Header>
-                          <Accordion.Body>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Nomor Rekening"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="nomorRek2"
-                                value={values.nomorRek2}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Nomor Rekening"
-                              />
-                            </FloatingLabel>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Nama Bank"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="namaBank2"
-                                value={values.namaBank2}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Nama Bank"
-                              />
-                            </FloatingLabel>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Atas Nama"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="atasNama2"
-                                value={capitalFirstWord(values.atasNama2)}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Atas Nama Bank"
-                              />
-                            </FloatingLabel>
-                          </Accordion.Body>
-                        </Accordion.Item>
-                      </Accordion>
-                      <Accordion flush>
-                        <Accordion.Item eventKey="0">
-                          <Accordion.Header>
-                            <i className="bi bi-gift me-2"></i>Kirim Hadiah
-                          </Accordion.Header>
-                          <Accordion.Body>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Alamat"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="alamat"
-                                value={values.alamat}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Alamat"
-                              />
-                            </FloatingLabel>
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Nama Penerima"
-                              className="mb-3"
-                            >
-                              <Form.Control
-                                name="namaPenerima"
-                                value={values.namaPenerima}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Nama Penerima"
-                              />
-                            </FloatingLabel>
-                          </Accordion.Body>
-                        </Accordion.Item>
-                      </Accordion>
-                      <FloatingLabel
-                        controlId="floatingInput"
-                        label="Nomor WA Konfirmasi "
-                        className="mt-3"
-                      >
-                        <Form.Control
-                          name="waKonfirmasi"
-                          value={values.waKonfirmasi}
-                          onChange={handleInputChange}
-                          type="text"
-                          placeholder="Masukan Nomor"
-                        />
-                        <Form.Control.Feedback type="invalid">
-                          Nomor Belum Diisi
-                        </Form.Control.Feedback>
-                      </FloatingLabel>
-                    </Accordion.Body>
-                  </Accordion.Item>
-                </Accordion>
-                <Accordion flush>
-                  <Accordion.Item eventKey="0">
-                    <Accordion.Header>
-                      <i className="bi bi bi-whatsapp me-2"></i>
-                      <div>Reservasi Kehadiran Lewat WA</div>
-                    </Accordion.Header>
-                    <Accordion.Body>
-                      <Form.Group className="mb-2">
-                        <Form.Label>Reservasi Kehadiran Lewat WA</Form.Label>
-                        <Form.Select
-                          name="daftarHadir"
-                          value={values.daftarHadir}
-                          onChange={handleInputChange}
-                          required
-                        >
-                          <option value="" disabled hidden>
-                            Silakan Pilih
-                          </option>
-                          <option value="Iya">Iya</option>
-                          <option value="Tidak">Tidak</option>
-                        </Form.Select>
-                        <Form.Control.Feedback type="invalid">
-                          Daftar Hadir Belum Dipilih
-                        </Form.Control.Feedback>
-                        {visible && (
+                {visibleGold && (
+                  <>
+                    <label className="mt-1">
+                      Data Tambahan Khusus Paket Gold
+                    </label>
+                    <Accordion flush>
+                      <Accordion.Item eventKey="0">
+                        <Accordion.Header>
+                          <i className="bi bi-chat-heart me-2"></i>Love Story
+                        </Accordion.Header>
+                        <Accordion.Body>
                           <FloatingLabel
-                            controlId="floatingInput"
-                            label="Nomor Calon Pengantin "
-                            className="formTambah mt-3"
+                            controlId="floatingTextarea2"
+                            label="Ceritakan ceritamu disini"
                           >
                             <Form.Control
-                              name="nomorCatin"
-                              value={values.nomorCatin}
+                              name="loveStory"
+                              value={capitalize(values.loveStory)}
                               onChange={handleInputChange}
-                              required
+                              as="textarea"
+                              placeholder="Ceritakan ceritamu disini"
+                              style={{ height: "100px" }}
+                            />
+                          </FloatingLabel>
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    </Accordion>
+                    <Accordion flush>
+                      <Accordion.Item eventKey="0">
+                        <Accordion.Header>
+                          <i className="bi bi-youtube me-2"></i>Live Streaming
+                        </Accordion.Header>
+                        <Accordion.Body>
+                          <Form.Group className="mb-2">
+                            <Form.Label>Akun Media Sosial</Form.Label>
+                            <Form.Control
+                              name="live"
+                              value={values.live}
+                              onChange={handleInputChange}
+                              type="text"
+                              placeholder="Masukan Link Media Sosial"
+                            />
+                          </Form.Group>
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    </Accordion>
+                    <Accordion flush>
+                      <Accordion.Item eventKey="0">
+                        <Accordion.Header>
+                          <i className="bi bi bi-box2 me-2"></i>
+                          <div>Wedding Gift</div>
+                        </Accordion.Header>
+                        <Accordion.Body>
+                          <Accordion flush>
+                            <Accordion.Item eventKey="0">
+                              <Accordion.Header>
+                                <i className="bi bi-envelope me-2"></i>Amplop
+                                Digital 1
+                              </Accordion.Header>
+                              <Accordion.Body>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Nomor Rekening"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="nomorRek"
+                                    value={values.nomorRek}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Nomor Rekening"
+                                  />
+                                </FloatingLabel>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Nama Bank"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="namaBank"
+                                    value={values.namaBank}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Nama Bank"
+                                  />
+                                </FloatingLabel>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Atas Nama"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="atasNama"
+                                    value={capitalFirstWord(values.atasNama)}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Atas Nama Bank"
+                                  />
+                                </FloatingLabel>
+                              </Accordion.Body>
+                            </Accordion.Item>
+                            <Accordion.Item eventKey="0">
+                              <Accordion.Header>
+                                <i className="bi bi-envelope me-2"></i>Amplop
+                                Digital 2
+                              </Accordion.Header>
+                              <Accordion.Body>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Nomor Rekening"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="nomorRek2"
+                                    value={values.nomorRek2}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Nomor Rekening"
+                                  />
+                                </FloatingLabel>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Nama Bank"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="namaBank2"
+                                    value={values.namaBank2}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Nama Bank"
+                                  />
+                                </FloatingLabel>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Atas Nama"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="atasNama2"
+                                    value={capitalFirstWord(values.atasNama2)}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Atas Nama Bank"
+                                  />
+                                </FloatingLabel>
+                              </Accordion.Body>
+                            </Accordion.Item>
+                          </Accordion>
+                          <Accordion flush>
+                            <Accordion.Item eventKey="0">
+                              <Accordion.Header>
+                                <i className="bi bi-gift me-2"></i>Kirim Hadiah
+                              </Accordion.Header>
+                              <Accordion.Body>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Alamat"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="alamat"
+                                    value={values.alamat}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Alamat"
+                                  />
+                                </FloatingLabel>
+                                <FloatingLabel
+                                  controlId="floatingInput"
+                                  label="Nama Penerima"
+                                  className="mb-3"
+                                >
+                                  <Form.Control
+                                    name="namaPenerima"
+                                    value={values.namaPenerima}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Nama Penerima"
+                                  />
+                                </FloatingLabel>
+                              </Accordion.Body>
+                            </Accordion.Item>
+                          </Accordion>
+                          <FloatingLabel
+                            controlId="floatingInput"
+                            label="Nomor WA Konfirmasi "
+                            className="mt-3"
+                          >
+                            <Form.Control
+                              name="waKonfirmasi"
+                              value={values.waKonfirmasi}
+                              onChange={handleInputChange}
                               type="text"
                               placeholder="Masukan Nomor"
                             />
@@ -1242,48 +1217,97 @@ export default function CardForm(props) {
                               Nomor Belum Diisi
                             </Form.Control.Feedback>
                           </FloatingLabel>
-                        )}
-                      </Form.Group>
-                    </Accordion.Body>
-                  </Accordion.Item>
-                </Accordion>
-                <Accordion flush>
-                  <Accordion.Item eventKey="0">
-                    <Accordion.Header>
-                      <i className="bi bi bi-qr-code me-2"></i>
-                      <div>QR Code RSVP</div>
-                    </Accordion.Header>
-                    <Accordion.Body>
-                      <Form.Group className="mb-2">
-                        <Form.Label>QR Code RSVP</Form.Label>
-                        <Form.Select
-                          name="rsvp"
-                          value={values.rsvp}
-                          onChange={handleInputChange}
-                          required
-                        >
-                          <option value="" disabled hidden>
-                            Silakan Pilih
-                          </option>
-                          <option value="Iya">Iya</option>
-                          <option value="Tidak">Tidak</option>
-                        </Form.Select>
-                        <Form.Control.Feedback type="invalid">
-                          RSVP Belum Dipilih
-                        </Form.Control.Feedback>
-                      </Form.Group>
-                    </Accordion.Body>
-                  </Accordion.Item>
-                </Accordion>
-              </>
-            )}
-            <Button type="submit" className="Button mt-1 mb-2">
-              <i className="bi bi-whatsapp me-2"></i>
-              Kirim
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    </Accordion>
+                    <Accordion flush>
+                      <Accordion.Item eventKey="0">
+                        <Accordion.Header>
+                          <i className="bi bi bi-whatsapp me-2"></i>
+                          <div>Reservasi Kehadiran Lewat WA</div>
+                        </Accordion.Header>
+                        <Accordion.Body>
+                          <Form.Group className="mb-2">
+                            <Form.Label>
+                              Reservasi Kehadiran Lewat WA
+                            </Form.Label>
+                            <Form.Select
+                              name="daftarHadir"
+                              value={values.daftarHadir}
+                              onChange={handleInputChange}
+                              required
+                            >
+                              <option value="" disabled hidden>
+                                Silakan Pilih
+                              </option>
+                              <option value="Iya">Iya</option>
+                              <option value="Tidak">Tidak</option>
+                            </Form.Select>
+                            <Form.Control.Feedback type="invalid">
+                              Daftar Hadir Belum Dipilih
+                            </Form.Control.Feedback>
+                            {visible && (
+                              <FloatingLabel
+                                controlId="floatingInput"
+                                label="Nomor Calon Pengantin "
+                                className="formTambah mt-3"
+                              >
+                                <Form.Control
+                                  name="nomorCatin"
+                                  value={values.nomorCatin}
+                                  onChange={handleInputChange}
+                                  required
+                                  type="text"
+                                  placeholder="Masukan Nomor"
+                                />
+                                <Form.Control.Feedback type="invalid">
+                                  Nomor Belum Diisi
+                                </Form.Control.Feedback>
+                              </FloatingLabel>
+                            )}
+                          </Form.Group>
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    </Accordion>
+                    <Accordion flush>
+                      <Accordion.Item eventKey="0">
+                        <Accordion.Header>
+                          <i className="bi bi bi-qr-code me-2"></i>
+                          <div>QR Code RSVP</div>
+                        </Accordion.Header>
+                        <Accordion.Body>
+                          <Form.Group className="mb-2">
+                            <Form.Label>QR Code RSVP</Form.Label>
+                            <Form.Select
+                              name="rsvp"
+                              value={values.rsvp}
+                              onChange={handleInputChange}
+                              required
+                            >
+                              <option value="" disabled hidden>
+                                Silakan Pilih
+                              </option>
+                              <option value="Iya">Iya</option>
+                              <option value="Tidak">Tidak</option>
+                            </Form.Select>
+                            <Form.Control.Feedback type="invalid">
+                              RSVP Belum Dipilih
+                            </Form.Control.Feedback>
+                          </Form.Group>
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    </Accordion>
+                  </>
+                )}
+                <Button type="submit" className="Button mt-1 mb-2">
+                  <i className="bi bi-whatsapp me-2"></i>
+                  Kirim
+                </Button>
+              </Form>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     </Container>
   );
 }
