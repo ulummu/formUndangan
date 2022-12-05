@@ -108,9 +108,9 @@ export default function CardForm(props) {
           "%0a-Nama Kedua Orang Tua : Putri " +
           values.wanitaAnakKe +
           " dari " +
-          values.namaIbuWanita +
-          " dan " +
           values.namaBapakWanita +
+          " dan " +
+          values.namaIbuWanita +
           "%0a%0a7. Mempelai Pria %0a-Nama Panggilan : " +
           values.panggilanPria +
           "%0a-Nama Lengkap : " +
@@ -118,10 +118,10 @@ export default function CardForm(props) {
           "%0a-Nama Kedua Orang Tua : Putra " +
           values.priaAnakKe +
           " dari " +
-          values.namaIbuPria +
-          " dan " +
           values.namaBapakPria +
-          "%0a%0a8. Rincian Acara %0a-Akad Nikah, Pemberkatan, dll" +
+          " dan " +
+          values.namaIbuPria +
+          "%0a%0a8. Rincian Acara %0a-Acara 1 " +
           data +
           "%0a-Hari, Tanggal Bulan Tahun : " +
           values.hariAkad +
@@ -135,7 +135,7 @@ export default function CardForm(props) {
           values.tempatAkad +
           "%0a-Maps acara : " +
           values.mapsAkad +
-          "%0a%0a9. Resepsi" +
+          "%0a%0a-Acara 2 " +
           dataResepsi +
           "%0a-Hari, Tanggal Bulan Tahun : " +
           values.hariResepsi +
@@ -197,9 +197,9 @@ export default function CardForm(props) {
           "%0a-Nama Kedua Orang Tua : Putri " +
           values.wanitaAnakKe +
           " dari " +
-          values.namaIbuWanita +
-          " dan " +
           values.namaBapakWanita +
+          " dan " +
+          values.namaIbuWanita +
           "%0a%0a7. Mempelai Pria %0a-Nama Panggilan : " +
           values.panggilanPria +
           "%0a-Nama Lengkap : " +
@@ -207,10 +207,10 @@ export default function CardForm(props) {
           "%0a-Nama Kedua Orang Tua : Putra " +
           values.priaAnakKe +
           " dari " +
-          values.namaIbuPria +
-          " dan " +
           values.namaBapakPria +
-          "%0a%0a8. Rincian Acara %0a-Akad Nikah, Pemberkatan, dll" +
+          " dan " +
+          values.namaIbuPria +
+          "%0a%0a8. Rincian Acara %0a-Acara 1" +
           data +
           "%0a-Hari, Tanggal Bulan Tahun : " +
           values.hariAkad +
@@ -224,7 +224,7 @@ export default function CardForm(props) {
           values.tempatAkad +
           "%0a-Maps acara : " +
           values.mapsAkad +
-          "%0a%0a9. Resepsi" +
+          "%0a%0a-Acara 2 " +
           dataResepsi +
           "%0a-Hari, Tanggal Bulan Tahun : " +
           values.hariResepsi +
@@ -651,9 +651,7 @@ export default function CardForm(props) {
                       <Accordion flush>
                         <Accordion.Item eventKey="0">
                           <Accordion.Header>
-                            <div className="labelForm">
-                              Akad Nikah, Pemberkatan, dll
-                            </div>
+                            <div className="labelForm">Acara 1</div>
                           </Accordion.Header>
                           <Accordion.Body>
                             <Form.Group className="mb-3">
@@ -818,7 +816,7 @@ export default function CardForm(props) {
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">
                           <Accordion.Header>
-                            <div className="labelForm">Resepsi</div>
+                            <div className="labelForm">Acara 2</div>
                           </Accordion.Header>
                           <Accordion.Body>
                             <Form.Group className="mb-3">
@@ -1192,7 +1190,9 @@ export default function CardForm(props) {
                                 >
                                   <Form.Control
                                     name="namaPenerima"
-                                    value={values.namaPenerima}
+                                    value={capitalFirstWord(
+                                      values.namaPenerima
+                                    )}
                                     onChange={handleInputChange}
                                     type="text"
                                     placeholder="Nama Penerima"
