@@ -72,6 +72,7 @@ export default function CardForm(props) {
   const capitalize = (s) =>
     s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
   const [data, setData] = useState("");
+  const [noCatin, setNoCatin] = useState("");
   const [dataResepsi, setDataResepsi] = useState("");
   const [dataGold, setDataGold] = useState(0);
   // useEffect(() => {}, [dataGold]);
@@ -107,9 +108,9 @@ export default function CardForm(props) {
           values.lengkapWanita +
           "%0a-Nama Kedua Orang Tua : Putri " +
           values.wanitaAnakKe +
-          " dari " +
+          " dari Bapak " +
           values.namaBapakWanita +
-          " dan " +
+          " dan Ibu " +
           values.namaIbuWanita +
           "%0a%0a7. Mempelai Pria %0a-Nama Panggilan : " +
           values.panggilanPria +
@@ -117,9 +118,9 @@ export default function CardForm(props) {
           values.lengkapPria +
           "%0a-Nama Kedua Orang Tua : Putra " +
           values.priaAnakKe +
-          " dari " +
+          " dari Bapak " +
           values.namaBapakPria +
-          " dan " +
+          " dan Ibu " +
           values.namaIbuPria +
           "%0a%0a8. Rincian Acara %0a-Acara 1 " +
           data +
@@ -149,7 +150,7 @@ export default function CardForm(props) {
           values.tempatResepsi +
           "%0a-Maps acara : " +
           values.mapsResepsi +
-          "%0a%0a10. Musik : " +
+          "%0a%0a9. Musik : " +
           values.musik +
           "%0a%0aData Tambahan Paket Gold %0a%0a1. Love Story : " +
           values.loveStory +
@@ -175,6 +176,7 @@ export default function CardForm(props) {
           values.waKonfirmasi +
           "%0a%0a4. Reservasi Kehadiran via WA : " +
           values.daftarHadir +
+          noCatin +
           "%0a%0a5. QR Code RSVP : " +
           values.rsvp;
       } else {
@@ -196,9 +198,9 @@ export default function CardForm(props) {
           values.lengkapWanita +
           "%0a-Nama Kedua Orang Tua : Putri " +
           values.wanitaAnakKe +
-          " dari " +
+          " dari Bapak " +
           values.namaBapakWanita +
-          " dan " +
+          " dan Ibu " +
           values.namaIbuWanita +
           "%0a%0a7. Mempelai Pria %0a-Nama Panggilan : " +
           values.panggilanPria +
@@ -206,9 +208,9 @@ export default function CardForm(props) {
           values.lengkapPria +
           "%0a-Nama Kedua Orang Tua : Putra " +
           values.priaAnakKe +
-          " dari " +
+          " dari Bapak " +
           values.namaBapakPria +
-          " dan " +
+          " dan Ibu " +
           values.namaIbuPria +
           "%0a%0a8. Rincian Acara %0a-Acara 1" +
           data +
@@ -238,7 +240,7 @@ export default function CardForm(props) {
           values.tempatResepsi +
           "%0a-Maps acara : " +
           values.mapsResepsi +
-          "%0a%0a10. Musik : " +
+          "%0a%0a9. Musik : " +
           values.musik;
       }
     }
@@ -255,6 +257,7 @@ export default function CardForm(props) {
       setVisible(!visible);
     } else if (e.target.name === "daftarHadir" && e.target.value === "Tidak") {
       setVisible(false);
+      setNoCatin("");
     }
     if (e.target.name === "paket" && e.target.value === "Gold") {
       setVisibleGold(!visible);
@@ -291,6 +294,9 @@ export default function CardForm(props) {
       setDataResepsi("%0a-Acara : " + values.lainnyaResepsi);
     } else {
       setDataResepsi("%0a-Acara : " + values.namaAcaraResepsi);
+    }
+    if (!!values.nomorCatin) {
+      setNoCatin("%0a-Nomor Calon Pengantin : " + values.nomorCatin);
     }
     // if (values.paket === "Gold") {
     //   setDataGold(1);
@@ -1031,6 +1037,7 @@ export default function CardForm(props) {
                             label="Ceritakan ceritamu disini"
                           >
                             <Form.Control
+                              className="lovestory"
                               name="loveStory"
                               value={capitalize(values.loveStory)}
                               onChange={handleInputChange}
@@ -1299,7 +1306,11 @@ export default function CardForm(props) {
                     </Accordion>
                   </>
                 )}
-                <Button type="submit" className="Button mt-1 mb-2">
+                <Form.Label className="nb">
+                  <strong>NB</strong> : Jika ada tambahan data atau yang
+                  lainnya, silakan hubungi admin
+                </Form.Label>
+                <Button type="submit" className="Button mb-2">
                   <i className="bi bi-whatsapp me-2"></i>
                   Kirim
                 </Button>
