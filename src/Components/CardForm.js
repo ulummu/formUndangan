@@ -300,7 +300,6 @@ export default function CardForm(props) {
       setNoCatin("%0a-Nomor Calon Pengantin : " + values.nomorCatin);
     }
     setTemp(encodeURI(values.loveStory));
-    console.log(temp);
     setValues({
       ...values,
       [name]: value,
