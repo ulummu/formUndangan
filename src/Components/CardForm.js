@@ -1040,8 +1040,9 @@ export default function CardForm(props) {
                             <Form.Control
                               className="lovestory"
                               name="loveStory"
+                              tabIndex={0}
                               value={capitalize(values.loveStory)}
-                              onKeyPress={(e) => checkSpecialChar(e)}
+                              onKeyDown={(e) => checkSpecialChar(e)}
                               onChange={handleInputChange}
                               as="textarea"
                               placeholder="Ceritakan ceritamu disini"
