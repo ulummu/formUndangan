@@ -75,6 +75,8 @@ export default function CardForm(props) {
   const [noCatin, setNoCatin] = useState("");
   const [dataResepsi, setDataResepsi] = useState("");
   const [dataGold, setDataGold] = useState(0);
+  const [temp, setTemp] = useState("");
+
   // useEffect(() => {}, [dataGold]);
   const capitalFirstWord = (e) => {
     var words = e.split(" ");
@@ -153,7 +155,7 @@ export default function CardForm(props) {
           "%0a%0a9. Musik : " +
           values.musik +
           "%0a%0aData Tambahan Paket Gold %0a%0a1. Love Story : " +
-          values.loveStory +
+          temp +
           "%0a%0a2. Live Streaming : " +
           values.live +
           "%0a%0a3. Wedding Gift %0a%0a-Amplop Digital 1%0a-Nomor Rekening 1 : " +
@@ -245,7 +247,6 @@ export default function CardForm(props) {
       }
     }
     // console.log(dataGold);
-    // console.log(data);
     event.preventDefault();
     event.stopPropagation();
     setValidated(true);
@@ -298,12 +299,8 @@ export default function CardForm(props) {
     if (!!values.nomorCatin) {
       setNoCatin("%0a-Nomor Calon Pengantin : " + values.nomorCatin);
     }
-    // if (values.paket === "Gold") {
-    //   setDataGold(1);
-    // }else
-    // if (!!values.lengkapWanita) {
-    //   capitalFirstword(values.lengkapWanita);
-    // }
+    setTemp(encodeURI(values.loveStory));
+    console.log(temp);
     setValues({
       ...values,
       [name]: value,
