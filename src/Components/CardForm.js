@@ -252,7 +252,7 @@ export default function CardForm(props) {
     setValidated(true);
   };
   const checkSpecialChar = (e) => {
-    if (!/[0-9a-zA-Z-()]/.test(e.key)) {
+    if (!/[0-9a-zA-Z-().,]/.test(e.key)) {
       e.preventDefault();
     }
   };
@@ -1041,7 +1041,7 @@ export default function CardForm(props) {
                               className="lovestory"
                               name="loveStory"
                               value={capitalize(values.loveStory)}
-                              onKeyDown={(e) => checkSpecialChar(e)}
+                              onKeyPress={(e) => checkSpecialChar(e)}
                               onChange={handleInputChange}
                               as="textarea"
                               placeholder="Ceritakan ceritamu disini"
