@@ -251,6 +251,11 @@ export default function CardForm(props) {
     event.stopPropagation();
     setValidated(true);
   };
+  const checkSpecialChar = (e) => {
+    if (!/[0-9a-zA-Z-()]/.test(e.key)) {
+      e.preventDefault();
+    }
+  };
   const handleInputChange = (e) => {
     // setData("%0aAcara : " + values.namaAcaraAkad);
     const { name, value } = e.target;
@@ -1036,6 +1041,7 @@ export default function CardForm(props) {
                               className="lovestory"
                               name="loveStory"
                               value={capitalize(values.loveStory)}
+                              onKeyDown={(e) => checkSpecialChar(e)}
                               onChange={handleInputChange}
                               as="textarea"
                               placeholder="Ceritakan ceritamu disini"
