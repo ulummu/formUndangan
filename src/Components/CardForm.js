@@ -252,12 +252,16 @@ export default function CardForm(props) {
     setValidated(true);
   };
   const checkSpecialChar = (e) => {
-    if (!/[0-9a-zA-Z-().,]/.test(e.key)) {
+    var key = e.key;
+    if (key === "&") {
       e.preventDefault();
     }
+    // if (!/[0-9a-zA-Z-()., ]/.test(e.which)) {
+    // }
   };
   const handleInputChange = (e) => {
     // setData("%0aAcara : " + values.namaAcaraAkad);
+
     const { name, value } = e.target;
     if (e.target.name === "daftarHadir" && e.target.value === "Iya") {
       setVisible(!visible);
@@ -1040,9 +1044,8 @@ export default function CardForm(props) {
                             <Form.Control
                               className="lovestory"
                               name="loveStory"
-                              tabIndex={0}
                               value={capitalize(values.loveStory)}
-                              onKeyDown={(e) => checkSpecialChar(e)}
+                              onKeyDown={checkSpecialChar}
                               onChange={handleInputChange}
                               as="textarea"
                               placeholder="Ceritakan ceritamu disini"
