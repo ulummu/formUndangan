@@ -252,16 +252,15 @@ export default function CardForm(props) {
     setValidated(true);
   };
   const checkSpecialChar = (e) => {
-    var key = e.key;
-    if (key === "&") {
-      e.preventDefault();
-    }
-    // if (!/[0-9a-zA-Z-()., ]/.test(e.which)) {
+    // var key = e.key;
+    // if (key === "%") {
     // }
+    if (/[$%&*?#@^]/.test(e.key)) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
   };
   const handleInputChange = (e) => {
-    // setData("%0aAcara : " + values.namaAcaraAkad);
-
     const { name, value } = e.target;
     if (e.target.name === "daftarHadir" && e.target.value === "Iya") {
       setVisible(!visible);
