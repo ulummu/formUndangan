@@ -252,13 +252,15 @@ export default function CardForm(props) {
     setValidated(true);
   };
   const checkSpecialChar = (e) => {
-    // var key = e.key;
-    // if (key === "%") {
-    // }
-    if (/[$%&*?#@^]/.test(e.key)) {
+    var key = e.key;
+    if (key === "%" || key === "&") {
       e.preventDefault();
       e.stopPropagation();
     }
+    // if (/[$%&*?#@^]/.test(e.key)) {
+    //   e.preventDefault();
+    //   e.stopPropagation();
+    // }
   };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
