@@ -252,8 +252,8 @@ export default function CardForm(props) {
     setValidated(true);
   };
   const checkSpecialChar = (e) => {
-    var key = e.key;
-    if (key === "%" || key === "&") {
+    var key = e.which;
+    if (key === 53 || key === 55) {
       e.preventDefault();
       e.stopPropagation();
     }
