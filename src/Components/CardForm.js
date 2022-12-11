@@ -1047,6 +1047,7 @@ export default function CardForm(props) {
                               name="loveStory"
                               value={capitalize(values.loveStory)}
                               onKeyDown={checkSpecialChar}
+                              onTouchStart={checkSpecialChar}
                               onChange={handleInputChange}
                               as="textarea"
                               placeholder="Ceritakan ceritamu disini"
