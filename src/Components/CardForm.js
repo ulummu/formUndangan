@@ -1045,7 +1045,7 @@ export default function CardForm(props) {
                             <Form.Control
                               className="lovestory"
                               name="loveStory"
-                              value={capitalize(values.loveStory)}
+                              value={values.loveStory}
                               onKeyDown={checkSpecialChar}
                               onTouchStart={checkSpecialChar}
                               onChange={handleInputChange}
