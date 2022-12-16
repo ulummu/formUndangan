@@ -69,8 +69,8 @@ export default function CardForm(props) {
   const [visibleGold, setVisibleGold] = useState(false);
   const [visibleAkad, setVisibleAkad] = useState(false);
   const [visibleResepsi, setVisibleResepsi] = useState(false);
-  const capitalize = (s) =>
-    s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+  // const capitalize = (s) =>
+  //   s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
   const [data, setData] = useState("");
   const [noCatin, setNoCatin] = useState("");
   const [dataResepsi, setDataResepsi] = useState("");
@@ -252,7 +252,7 @@ export default function CardForm(props) {
     setValidated(true);
   };
   const checkSpecialChar = (e) => {
-    var key = e.which;
+    var key = e.keyCode;
     if (key === 53 || key === 55) {
       e.preventDefault();
       e.stopPropagation();
@@ -828,20 +828,17 @@ export default function CardForm(props) {
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">
                           <Accordion.Header>
-                            <div className="labelForm">Acara 2</div>
+                            <div>Acara 2</div>
                           </Accordion.Header>
                           <Accordion.Body>
                             <Form.Group className="mb-3">
-                              <Form.Label className="labelForm">
-                                Acara
-                              </Form.Label>
+                              <Form.Label>Acara</Form.Label>
                               <Form.Select
                                 name="namaAcaraResepsi"
                                 value={capitalFirstWord(
                                   values.namaAcaraResepsi
                                 )}
                                 onChange={handleInputChange}
-                                required
                               >
                                 <option value="" disabled hidden>
                                   Silakan Pilih
@@ -862,7 +859,6 @@ export default function CardForm(props) {
                                     name="lainnyaResepsi"
                                     value={values.lainnyaResepsi}
                                     onChange={handleInputChange}
-                                    required
                                     type="text"
                                     placeholder="Masukan Nama Acara"
                                   />
@@ -878,7 +874,6 @@ export default function CardForm(props) {
                             <Row>
                               <Col sm={3}>
                                 <Form.Select
-                                  required
                                   className="hari"
                                   name="hariResepsi"
                                   value={values.hariResepsi}
@@ -910,7 +905,6 @@ export default function CardForm(props) {
                                     name="resepsi"
                                     value={capitalFirstWord(values.resepsi)}
                                     onChange={handleInputChange}
-                                    required
                                     type="text"
                                     placeholder="Masukan Hari, Tanggal Bulan Tahun"
                                   />
@@ -928,7 +922,6 @@ export default function CardForm(props) {
                                   className="mb-3"
                                 >
                                   <Form.Control
-                                    required
                                     name="pukulResepsi"
                                     value={values.pukulResepsi}
                                     onChange={handleInputChange}
@@ -945,7 +938,6 @@ export default function CardForm(props) {
                               </Col>
                               <Col>
                                 <Form.Select
-                                  required
                                   className="zona"
                                   name="zonaWaktuResepsi"
                                   value={values.zonaWaktuResepsi}
@@ -970,7 +962,6 @@ export default function CardForm(props) {
                                 name="tempatResepsi"
                                 value={capitalFirstWord(values.tempatResepsi)}
                                 onChange={handleInputChange}
-                                required
                                 type="text"
                                 placeholder="Masukan Tempat Acara"
                               />
@@ -1047,7 +1038,6 @@ export default function CardForm(props) {
                               name="loveStory"
                               value={values.loveStory}
                               onKeyDown={checkSpecialChar}
-                              onTouchStart={checkSpecialChar}
                               onChange={handleInputChange}
                               as="textarea"
                               placeholder="Ceritakan ceritamu disini"
