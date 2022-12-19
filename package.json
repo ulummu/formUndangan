@@ -1,7 +1,7 @@
 {
   "name": "formundangan",
   "version": "0.1.0",
-  "homepage": "https://ulummu.github.io/formUndangan",
+  "homepage": "http://form2.undangandigimo.com",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
