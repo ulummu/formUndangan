@@ -183,7 +183,7 @@ export default function CardForm(props) {
           values.rsvp;
       } else {
         window.location.href =
-          "https://api.whatsapp.com/send/?phone=6282134303665&text=" +
+          "https://api.whatsapp.com/send/?phone=6281325120500&text=" +
           "1. Tema : " +
           values.tema +
           "%0a%0a2. Bahasa Undangan : " +
