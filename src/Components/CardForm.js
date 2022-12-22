@@ -1009,7 +1009,7 @@ export default function CardForm(props) {
                           value={values.musik}
                           onChange={handleInputChange}
                           type="text"
-                          placeholder="Masukan Link dan detik lagu dimulai"
+                          placeholder="Masukkan Link Youtube"
                         />
                         <Form.Control.Feedback type="invalid">
                           Musik Belum Diisi
