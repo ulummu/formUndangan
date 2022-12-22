@@ -1306,7 +1306,7 @@ export default function CardForm(props) {
                 )}
                 <Form.Label className="nb">
                   <strong>NB</strong> : Jika ada tambahan data atau yang
-                  lainnya, silakan hubungi admin
+                  lainnya, silakan hubungi admin uji coba edit
                 </Form.Label>
                 <Button type="submit" className="Button mb-2">
                   <i className="bi bi-whatsapp me-2"></i>
