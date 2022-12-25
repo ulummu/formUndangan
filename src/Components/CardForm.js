@@ -309,7 +309,13 @@ export default function CardForm(props) {
     if (!!values.nomorCatin) {
       setNoCatin("%0a-Nomor Calon Pengantin : " + values.nomorCatin);
     }
-    setTemp(encodeURI(values.loveStory));
+    if (dataGold === 1) {
+      setTemp(encodeURI(values.loveStory));
+      setValues({
+        ...values,
+        [name]: value,
+      });
+    }
     setValues({
       ...values,
       [name]: value,
