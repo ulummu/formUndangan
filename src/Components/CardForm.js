@@ -817,7 +817,7 @@ export default function CardForm(props) {
                             <FloatingLabel
                               controlId="floatingInput"
                               label="Maps Acara"
-                              className="mb-3"
+                              className="mb-1"
                             >
                               <Form.Control
                                 name="mapsAkad"
@@ -989,7 +989,7 @@ export default function CardForm(props) {
                             <FloatingLabel
                               controlId="floatingInput"
                               label="Maps Acara"
-                              className="mb-3"
+                              className="mb-1"
                             >
                               <Form.Control
                                 name="mapsResepsi"
