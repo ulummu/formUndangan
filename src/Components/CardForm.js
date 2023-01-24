@@ -829,18 +829,18 @@ export default function CardForm(props) {
                               <Form.Control.Feedback type="invalid">
                                 Maps Belum Diisi
                               </Form.Control.Feedback>
-                              <Form.Label className="labelTutor">
-                                Tutorial Salin Maps{" "}
-                                <a
-                                  className="tutor"
-                                  href="https://www.youtube.com/watch?v=07ihVwltHvQ"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  Klik Disini
-                                </a>
-                              </Form.Label>
                             </FloatingLabel>
+                            <Form.Label className="labelTutor">
+                              Tutorial Salin Maps{" "}
+                              <a
+                                className="tutor"
+                                href="https://www.youtube.com/watch?v=07ihVwltHvQ"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                Klik Disini
+                              </a>
+                            </Form.Label>
                           </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">
@@ -1001,18 +1001,18 @@ export default function CardForm(props) {
                               <Form.Control.Feedback type="invalid">
                                 Maps Belum Diisi
                               </Form.Control.Feedback>
-                              <Form.Label className="labelTutor">
-                                Tutorial Salin Maps{" "}
-                                <a
-                                  className="tutor"
-                                  href="https://www.youtube.com/watch?v=07ihVwltHvQ"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  Klik Disini
-                                </a>
-                              </Form.Label>
                             </FloatingLabel>
+                            <Form.Label className="labelTutor">
+                              Tutorial Salin Maps{" "}
+                              <a
+                                className="tutor"
+                                href="https://www.youtube.com/watch?v=07ihVwltHvQ"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                Klik Disini
+                              </a>
+                            </Form.Label>
                           </Accordion.Body>
                         </Accordion.Item>
                       </Accordion>
