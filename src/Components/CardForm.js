@@ -829,6 +829,17 @@ export default function CardForm(props) {
                               <Form.Control.Feedback type="invalid">
                                 Maps Belum Diisi
                               </Form.Control.Feedback>
+                              <Form.Label className="labelTutor">
+                                Tutorial Salin Maps{" "}
+                                <a
+                                  className="tutor"
+                                  href="https://www.youtube.com/watch?v=07ihVwltHvQ"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  Klik Disini
+                                </a>
+                              </Form.Label>
                             </FloatingLabel>
                           </Accordion.Body>
                         </Accordion.Item>
@@ -990,6 +1001,17 @@ export default function CardForm(props) {
                               <Form.Control.Feedback type="invalid">
                                 Maps Belum Diisi
                               </Form.Control.Feedback>
+                              <Form.Label className="labelTutor">
+                                Tutorial Salin Maps{" "}
+                                <a
+                                  className="tutor"
+                                  href="https://www.youtube.com/watch?v=07ihVwltHvQ"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  Klik Disini
+                                </a>
+                              </Form.Label>
                             </FloatingLabel>
                           </Accordion.Body>
                         </Accordion.Item>
@@ -1021,6 +1043,17 @@ export default function CardForm(props) {
                           Musik Belum Diisi
                         </Form.Control.Feedback>
                       </Form.Group>
+                      <Form.Label className="labelTutor">
+                        Tutorial Salin Backsound{" "}
+                        <a
+                          className="tutor"
+                          href="https://www.youtube.com/watch?v=DmWVqg3mfps"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Klik Disini
+                        </a>
+                      </Form.Label>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
