@@ -8,13 +8,15 @@
     .Card{
         width: 100%;
     }
-    .formTanggal{
-        margin-top: 10px;
-    }
     .formTambah{
         margin-top: 10px;
     }
 }
+@media screen and (max-width: 540px){
+    .formTanggal{
+           margin-top: 10px;
+       }
+   }
 
 .logo{
 width:unset;
