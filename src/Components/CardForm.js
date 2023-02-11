@@ -112,7 +112,7 @@ export default function CardForm(props) {
           values.foto +
           "%0a%0a6. Nama yang didahulukan : " +
           values.namaAwal +
-          "%0a%0a7. Mempelai Wanita %0a-Nama Panggilan " +
+          "%0a%0a7. Mempelai Wanita %0a-Nama Panggilan : " +
           values.panggilanWanita +
           "%0a-Nama Lengkap : " +
           values.lengkapWanita +
@@ -138,7 +138,7 @@ export default function CardForm(props) {
           values.hariAkad +
           ", " +
           values.akad +
-          "%0a-Pukul : " +
+          "%0a-Pukul " +
           values.pukulAkad +
           " " +
           values.zonaWaktuAkad +
@@ -152,7 +152,7 @@ export default function CardForm(props) {
           values.hariResepsi +
           ", " +
           values.resepsi +
-          "%0a-Pukul : " +
+          "%0a-Pukul " +
           values.pukulResepsi +
           " " +
           values.zonaWaktuResepsi +
@@ -205,7 +205,7 @@ export default function CardForm(props) {
           values.foto +
           "%0a%0a6. Nama yang didahulukan : " +
           values.namaAwal +
-          "%0a%0a7. Mempelai Wanita %0a-Nama Panggilan " +
+          "%0a%0a7. Mempelai Wanita %0a-Nama Panggilan :" +
           values.panggilanWanita +
           "%0a-Nama Lengkap : " +
           values.lengkapWanita +
@@ -231,7 +231,7 @@ export default function CardForm(props) {
           values.hariAkad +
           ", " +
           values.akad +
-          "%0a-Pukul : " +
+          "%0a-Pukul " +
           values.pukulAkad +
           " " +
           values.zonaWaktuAkad +
@@ -245,7 +245,7 @@ export default function CardForm(props) {
           values.hariResepsi +
           ", " +
           values.resepsi +
-          "%0a-Pukul : " +
+          "%0a-Pukul " +
           values.pukulResepsi +
           " " +
           values.zonaWaktuResepsi +
@@ -443,7 +443,6 @@ export default function CardForm(props) {
                     name="pakaiFilter"
                     value={values.pakaiFilter}
                     onChange={handleInputChange}
-                    required
                   >
                     <option value="" disabled hidden>
                       Silakan Pilih
