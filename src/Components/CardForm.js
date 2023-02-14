@@ -457,7 +457,7 @@ export default function CardForm(props) {
                     Contoh Filter bisa dilihat{" "}
                     <a
                       className="tutor"
-                      href="https://www.youtube.com/watch?v=07ihVwltHvQ"
+                      href="https://undangandigimo.com/katalog-filter/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
