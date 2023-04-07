@@ -438,7 +438,7 @@ export default function CardForm(props) {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label>Filter Instagram</Form.Label>
+                  <Form.Label className="mb-0">Filter Instagram</Form.Label>
                   <Form.Label className="labelFormFilter">
                     Dengan tambahan biaya.
                   </Form.Label>
