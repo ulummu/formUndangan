@@ -186,9 +186,9 @@ export default function CardForm(props) {
           values.waKonfirmasi +
           "%0a%0a4. Reservasi Kehadiran via WA : " +
           values.daftarHadir +
-          noCatin +
-          "%0a%0a5. QR Code RSVP : " +
-          values.rsvp;
+          noCatin;
+        // "%0a%0a5. QR Code RSVP : " +
+        // values.rsvp;
       } else {
         window.location.href =
           "https://api.whatsapp.com/send/?phone=6281325120500&text=" +
@@ -1457,7 +1457,7 @@ export default function CardForm(props) {
                         </Accordion.Body>
                       </Accordion.Item>
                     </Accordion>
-                    <Accordion flush>
+                    {/* <Accordion flush>
                       <Accordion.Item eventKey="0">
                         <Accordion.Header>
                           <i className="bi bi bi-qr-code me-2"></i>
@@ -1484,7 +1484,7 @@ export default function CardForm(props) {
                           </Form.Group>
                         </Accordion.Body>
                       </Accordion.Item>
-                    </Accordion>
+                    </Accordion> */}
                   </>
                 )}
                 <Form.Label className="nb">
