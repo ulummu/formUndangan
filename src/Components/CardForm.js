@@ -141,9 +141,9 @@ export default function CardForm(props) {
               >
                 <SelectFormComponent
                   validasi={true}
-                  name="temaWebsite"
+                  name="tema"
                   label="Tema Undangan Website"
-                  defaultValue={values.temaWebsite}
+                  defaultValue={values.tema}
                   optionsTitle="Silakan Pilih Tema"
                   options={webThemes}
                   errorText="Tema Belum Dipilih"
