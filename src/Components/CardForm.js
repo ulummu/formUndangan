@@ -22,6 +22,7 @@ import {
   fotoPackages,
   framePackages,
   initialValues,
+  namaPertama,
   pakaiFilterPackages,
   undanganPackages,
   webThemes,
@@ -196,6 +197,41 @@ export default function CardForm(props) {
                     label="Contoh Filter Bisa Dilihat"
                     linkTutorial="https://undangandigimo.com/katalog-filter/"
                   />
+                  {visibleFilter && (
+                    <>
+                      <SelectFormComponent
+                        validasi={true}
+                        label="Tema Filter Instagram"
+                        name="filterig"
+                        defaultValue={values.filterig}
+                        optionsTitle="Silakan Pilih Filter"
+                        options={filterPackages}
+                        errorText="Filter Belum Dipilih"
+                        onChange={handleInputChange}
+                      />
+
+                      <SelectFormComponent
+                        validasi={true}
+                        label="Pilih Frame"
+                        name="frame"
+                        value={values.frame}
+                        optionsTitle="Silakan Pilih Frame"
+                        options={framePackages}
+                        errorText="Frame Belum Dipilih"
+                        onChange={handleInputChange}
+                      />
+                    </>
+                  )}
+                  <SelectFormComponent
+                    validasi={true}
+                    name="namaAwal"
+                    label="Nama yang Didahulukan"
+                    defaultValue={values.namaAwal}
+                    optionsTitle="Silakan Pilih"
+                    options={namaPertama}
+                    errorText="Nama Belum Dipilih"
+                    onChange={handleInputChange}
+                  />
                   <DataMempelai
                     panggilanWanita={values.panggilanWanita}
                     lengkapWanita={values.lengkapWanita}
@@ -230,31 +266,6 @@ export default function CardForm(props) {
                     lainnyaResepsi={values.lainnyaResepsi}
                     handleInputChange={handleInputChange}
                   />
-                  {visibleFilter && (
-                    <>
-                      <SelectFormComponent
-                        validasi={true}
-                        label="Tema Filter Instagram"
-                        name="filterig"
-                        defaultValue={values.filterig}
-                        optionsTitle="Silakan Pilih Filter"
-                        options={filterPackages}
-                        errorText="Filter Belum Dipilih"
-                        onChange={handleInputChange}
-                      />
-
-                      <SelectFormComponent
-                        validasi={true}
-                        label="Pilih Frame"
-                        name="frame"
-                        value={values.frame}
-                        optionsTitle="Silakan Pilih Frame"
-                        options={framePackages}
-                        errorText="Frame Belum Dipilih"
-                        onChange={handleInputChange}
-                      />
-                    </>
-                  )}
 
                   <Accordion flush>
                     <Accordion.Item eventKey="0">
