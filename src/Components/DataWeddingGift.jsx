@@ -185,6 +185,7 @@ const DataWeddingGift = ({ loveStory, live, nomorRek, namaBank, atasNama, nomorR
             <SelectFormComponent 
             label="Resevasi Kehadiran Lewat WA"
             name="daftarHadir"
+            validasi={true}
             value={daftarHadir}
             optionsTitle="Silakan Pilih"
             options={pakaiFilterPackages}
@@ -198,6 +199,7 @@ const DataWeddingGift = ({ loveStory, live, nomorRek, namaBank, atasNama, nomorR
                   className="formTambah mt-3"
                 >
                   <Form.Control
+                  validasi={true}
                     name="nomorCatin"
                     value={nomorCatin}
                     onChange={handleInputChange}
