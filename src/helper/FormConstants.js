@@ -88,6 +88,7 @@ export const filterPackages = [
   { value: "Filter Wedding AC", text: "Filter Wedding AC" },
   { value: "Filter Wedding AD", text: "Filter Wedding AD" },
   { value: "Filter Wedding AE", text: "Filter Wedding AE" },
+  { value: "Filter Wedding AF", text: "Filter Wedding AF" },
   { value: "Filter Wedding 01", text: "Filter Wedding 01" },
   { value: "Filter Wedding 02", text: "Filter Wedding 02" },
   { value: "Filter Wedding Jawa", text: "Filter Wedding Jawa" },

@@ -199,7 +199,7 @@ const DataWeddingGift = ({ loveStory, live, nomorRek, namaBank, atasNama, nomorR
                   className="formTambah mt-3"
                 >
                   <Form.Control
-                  validasi={true}
+                    validasi={true}
                     name="nomorCatin"
                     value={nomorCatin}
                     onChange={handleInputChange}
