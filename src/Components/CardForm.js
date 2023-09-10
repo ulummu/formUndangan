@@ -126,7 +126,7 @@ export default function CardForm(props) {
                   validasi={true}
                   name="tema"
                   label="Tema Undangan Website"
-                  defaultValue={values.tema}
+                  defaultValue={encodeURI(values.tema)}
                   optionsTitle="Silakan Pilih Tema"
                   options={webThemes}
                   errorText="Tema Belum Dipilih"
